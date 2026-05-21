@@ -1,4 +1,5 @@
-/* ===== GAMEGOU WEBSITE STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&display=swap');
+/* ==== GAMEGOU WEBSITE STYLES ==== */
 :root {
   --teal: #006978;
   --teal-light: #0a8fa0;
@@ -2967,4 +2968,38 @@ body.cookie-banner-visible {
   .cookie-banner-ok {
     width: 100%;
   }
+}
+/* Hero font update */
+.hero-title,
+.hero h1,
+.hero-content h1 {
+  font-family: 'Teko', Impact, 'Arial Narrow Bold', sans-serif !important;
+  font-size: clamp(5.5rem, 9vw, 10rem) !important;
+  line-height: 0.78 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.65) !important;
+  transform: skewX(-4deg);
+  transform-origin: left center;
+}
+
+.hero-title span,
+.hero h1 span,
+.hero-content h1 span {
+  font-family: 'Teko', Impact, 'Arial Narrow Bold', sans-serif !important;
+  color: #ffffff !important;
+}
+
+.hero-eyebrow {
+  font-family: 'Teko', Impact, 'Arial Narrow Bold', sans-serif !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.28em !important;
+  color: #f59a23 !important;
+}
+
+.hero-desc,
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.78) !important;
 }
