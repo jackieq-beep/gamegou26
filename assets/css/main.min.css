@@ -96,3 +96,21 @@
     letter-spacing: 0.18em !important;
   }
 }
+
+/* Keep the homepage hero responsive after the imported site stylesheet. */
+@media (max-width: 1120px) {
+  .hero-content { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  .hero h1, .hero-title, .hero-heading, .hero__title, .hero-copy h1, .hero-content h1 {
+    font-size: clamp(4.25rem, 15vw, 6.4rem) !important;
+    line-height: .78 !important;
+    max-width: 8.5ch;
+  }
+}
+@media (max-width: 560px) {
+  .hero h1, .hero-title, .hero-heading, .hero__title, .hero-copy h1, .hero-content h1 {
+    font-size: clamp(3.9rem, 17.5vw, 5.4rem) !important;
+    line-height: .78 !important;
+  }
+}

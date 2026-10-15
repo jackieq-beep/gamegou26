@@ -3003,3 +3003,283 @@ body.cookie-banner-visible {
 .hero-subtitle {
   color: rgba(255, 255, 255, 0.78) !important;
 }
+
+
+/* ===== GAMEGOU REDESIGN: EDITORIAL HIERARCHY, ARTWORK, RESPONSIVE FINISH ===== */
+:root {
+  --teal: #13a4ad;
+  --teal-light: #37c5cb;
+  --amber: #ff9d24;
+  --amber-light: #ffb347;
+  --bg: #070b0e;
+  --bg-surface: #0b1216;
+  --bg-card: #101a20;
+  --bg-card-hover: #16252c;
+  --text-secondary: #b2c0c5;
+  --text-muted: #82949a;
+  --border: rgba(190, 220, 225, 0.13);
+  --border-hover: rgba(255, 157, 36, 0.65);
+}
+
+html { scroll-padding-top: 84px; }
+body { background: var(--bg); }
+::selection { color: #061013; background: var(--amber); }
+
+.navbar {
+  height: 76px;
+  padding-inline: clamp(1.25rem, 4.5vw, 4.5rem);
+  background: rgba(6, 11, 14, 0.88);
+  border-bottom-color: rgba(255,255,255,0.09);
+}
+.navbar.scrolled { background: rgba(6, 11, 14, 0.97); }
+.nav-links { gap: clamp(1.15rem, 2.2vw, 2.25rem); }
+.nav-links a { font-size: 0.78rem; letter-spacing: 0.11em; }
+.nav-links a::after { height: 2px; }
+.nav-cta {
+  padding: 11px 18px !important;
+  background: var(--amber) !important;
+  color: #111 !important;
+  letter-spacing: 0.1em !important;
+}
+.nav-cta:hover { background: #ffc16b !important; color: #111 !important; }
+.page, .static-main { padding-top: 76px; }
+.nav-mobile { top: 76px; }
+
+.sharp-hero {
+  min-height: min(900px, calc(100svh - 76px));
+  background: #060a0d;
+}
+.sharp-hero::before {
+  background:
+    linear-gradient(90deg, rgba(5,9,12,.97) 0%, rgba(5,9,12,.86) 31%, rgba(5,9,12,.42) 62%, rgba(5,9,12,.42) 100%),
+    linear-gradient(0deg, #070b0e 0%, transparent 30%, rgba(5,9,12,.14) 100%),
+    url('../images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art.webp') center right / cover no-repeat;
+  opacity: 1;
+}
+.sharp-hero::after {
+  height: 22%;
+  background: linear-gradient(180deg, transparent 0%, rgba(7,11,14,.92) 100%);
+}
+.hero-bg {
+  background:
+    radial-gradient(ellipse at 16% 22%, rgba(255,157,36,.16), transparent 30%),
+    radial-gradient(ellipse at 76% 35%, rgba(19,164,173,.14), transparent 36%);
+}
+.hero-angle { opacity: .42; }
+.hero-content {
+  max-width: 1480px;
+  min-height: min(900px, calc(100svh - 76px));
+  padding: clamp(4rem, 7vw, 7rem) clamp(1.25rem, 4.5vw, 4.5rem) 4rem;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  gap: clamp(2rem, 4vw, 4.25rem);
+}
+.hero-eyebrow {
+  margin-bottom: 1.35rem;
+  color: var(--amber) !important;
+  font-size: .78rem !important;
+  letter-spacing: .23em !important;
+}
+.hero h1 {
+  font-size: clamp(5.4rem, 9.1vw, 9.6rem);
+  line-height: .77;
+  letter-spacing: .005em;
+  margin-bottom: 1.8rem;
+}
+.hero-desc {
+  max-width: 470px;
+  font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+  line-height: 1.55;
+  color: rgba(242,247,248,.82) !important;
+  margin-bottom: 2rem;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.btn-primary, .btn-secondary {
+  min-height: 50px;
+  padding: 14px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.btn-primary {
+  color: #111 !important;
+  background: var(--amber);
+  border: 1px solid var(--amber);
+}
+.btn-primary:hover { background: #ffbd63; border-color: #ffbd63; }
+.btn-secondary { border-color: rgba(255,255,255,.35); }
+.btn-secondary:hover { border-color: var(--amber); }
+.hero-stats {
+  margin-top: 2.5rem;
+  max-width: 620px;
+  border-top-color: rgba(255,255,255,.2);
+  border-bottom-color: rgba(255,255,255,.2);
+}
+.stat-item { padding: 1.05rem .9rem; }
+.stat-number { color: #fff; }
+.stat-label {
+  color: #aebfc3;
+  font-size: .68rem;
+  line-height: 1.4;
+  letter-spacing: .1em;
+}
+.hero-showcase {
+  grid-template-columns: minmax(0, 1.08fr) minmax(155px, .72fr);
+  gap: .75rem;
+  transform: translateY(.2rem);
+}
+.hero-feature {
+  min-height: 250px;
+  border: 1px solid rgba(255,255,255,.16);
+  clip-path: none;
+  background: #101a20;
+  box-shadow: 0 24px 70px rgba(0,0,0,.38);
+}
+.hero-feature-large { min-height: clamp(420px, 45vw, 600px); }
+.hero-feature-stack { gap: .75rem; }
+.hero-feature-copy { left: 1.2rem; right: 1.2rem; bottom: 1.2rem; }
+.hero-feature-kicker { color: #ffb34e; letter-spacing: .15em; }
+.hero-feature::after {
+  background: linear-gradient(180deg, rgba(0,0,0,.02) 10%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.88) 100%);
+}
+.hero-feature img { filter: saturate(.9); }
+.hero-feature:hover img { filter: saturate(1.08); }
+
+.section { padding-block: clamp(4rem, 7vw, 7rem); }
+.games-under-hero {
+  padding-top: clamp(4.5rem, 7vw, 7rem);
+  background: linear-gradient(180deg, #070b0e 0%, #0a1115 100%);
+}
+.games-section-head { margin-bottom: 2.25rem; }
+.section-label { color: var(--amber); }
+.section-title {
+  font-size: clamp(2.35rem, 4.5vw, 4.2rem);
+  line-height: .98;
+  letter-spacing: -.025em;
+}
+.section-title span { color: var(--amber); }
+.section-desc { color: var(--text-secondary); }
+.credibility-strip {
+  background: #0a1115;
+  border-color: rgba(255,255,255,.09);
+}
+.credibility-head {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: end;
+}
+.credibility-head .section-title { font-size: clamp(2rem, 3.5vw, 3.2rem); }
+.credibility-grid { border-color: rgba(255,255,255,.12); }
+.credibility-card {
+  min-height: 135px;
+  padding: 1.4rem;
+  background: rgba(255,255,255,.015);
+}
+.credibility-card strong { color: #fff; }
+.credibility-card span { color: var(--text-secondary); line-height: 1.5; }
+
+.games-grid { gap: 1.1rem; }
+.game-card {
+  background: #0d1519;
+  border: 1px solid rgba(255,255,255,.12);
+  transition: border-color .25s ease, transform .25s ease, background .25s ease;
+}
+.game-card:hover {
+  border-color: rgba(255,157,36,.7);
+  background: #111d22;
+  box-shadow: 0 20px 48px rgba(0,0,0,.28);
+}
+.game-card-img { background: #101a20; }
+.game-card-img img { transition: transform .65s cubic-bezier(.2,.7,.2,1), filter .4s ease; }
+.game-card:hover .game-card-img img { transform: scale(1.045); }
+.game-card-body { padding: 1.4rem 1.4rem 1.55rem; }
+.game-card-genre { color: #a5b5ba; font-size: .72rem; letter-spacing: .11em; }
+.game-card-title { line-height: 1.05; }
+.game-card-desc { color: var(--text-secondary); line-height: 1.65; }
+.game-card-cta { color: var(--amber); }
+.game-card-badge { background: var(--amber); color: #111; }
+
+.footer {
+  background: #05090b;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.footer-grid { gap: clamp(1.5rem, 3vw, 3.5rem); }
+.footer-brand p, .footer-col li, .footer-bottom { color: #91a2a8; }
+.footer-col h4 { color: #fff; letter-spacing: .12em; }
+.footer a:hover { color: var(--amber); }
+.footer-bottom { border-top-color: rgba(255,255,255,.1); }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 1120px) {
+  .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-left { max-width: 760px; }
+  .hero-showcase { max-width: 920px; }
+  .hero-feature-large { min-height: 430px; }
+}
+@media (max-width: 768px) {
+  .navbar { height: 68px; padding-inline: 1.1rem; }
+  .nav-mobile { top: 68px; }
+  .page, .static-main { padding-top: 68px; }
+  .sharp-hero { min-height: auto; }
+  .sharp-hero::before {
+    background:
+      linear-gradient(90deg, rgba(5,9,12,.92), rgba(5,9,12,.52)),
+      linear-gradient(0deg, #070b0e 0%, transparent 65%),
+      url('../images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art.webp') 63% center / cover no-repeat;
+  }
+  .hero-content { min-height: auto; padding: 4.3rem 1.25rem 3rem; gap: 2.5rem; }
+  .hero h1 { font-size: clamp(4.25rem, 15vw, 6.4rem); }
+  .hero-desc { max-width: 100%; }
+  .hero-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: auto; }
+  .hero-stats { grid-template-columns: repeat(3, minmax(0,1fr)); margin-top: 2rem; }
+  .stat-item { padding: .9rem .65rem; border-right: 1px solid rgba(255,255,255,.16); border-bottom: 0; }
+  .stat-item:last-child { border-right: 0; }
+  .hero-showcase { grid-template-columns: minmax(0,1fr) minmax(0,.78fr); }
+  .hero-feature-large { min-height: 400px; }
+  .hero-feature, .hero-feature-small { min-height: 190px; }
+  .hero-feature-copy { left: .85rem; right: .85rem; bottom: .9rem; }
+  .hero-feature p { font-size: .86rem; line-height: 1.4; }
+  .games-section-head { grid-template-columns: 1fr; gap: 1rem; }
+  .credibility-head { grid-template-columns: 1fr; gap: .75rem; }
+  .credibility-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .credibility-card, .credibility-card:nth-child(2) { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .credibility-card:nth-child(even) { border-right: 0; }
+  .credibility-card:nth-last-child(-n+2) { border-bottom: 0; }
+  .home-games-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-games-grid .game-card:nth-child(n) { grid-column: span 1; }
+  .section { padding-inline: 1.25rem; }
+}
+@media (max-width: 560px) {
+  .hero-content { padding-top: 3.5rem; }
+  .hero h1 { font-size: clamp(3.9rem, 17.5vw, 5.4rem); }
+  .hero-eyebrow { letter-spacing: .16em !important; font-size: .73rem !important; }
+  .hero-actions { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr 1fr; }
+  .stat-number { font-size: clamp(1.45rem, 7vw, 2rem); }
+  .stat-label { font-size: .58rem; letter-spacing: .06em; }
+  .hero-showcase { grid-template-columns: 1fr; }
+  .hero-feature-large { min-height: 340px; }
+  .hero-feature-stack { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+  .hero-feature, .hero-feature-small { min-height: 170px; }
+  .hero-feature-small h3 { font-size: 1.25rem; }
+  .hero-feature p { display: none; }
+  .credibility-grid { grid-template-columns: 1fr 1fr; }
+  .credibility-card { min-height: 130px; padding: 1rem; }
+  .credibility-card strong { font-size: 1.35rem; }
+  .home-games-grid, .games-grid { grid-template-columns: 1fr; }
+  .home-games-grid .game-card:nth-child(n) { grid-column: auto; }
+  .game-card-body { padding: 1.2rem; }
+  .section-title { font-size: clamp(2.1rem, 10vw, 3rem); }
+}
