@@ -90,7 +90,7 @@ const GAMES = [
       'assets/images/games/soccer-legend/soccer-legend-gamegou-street-football-brazil-gameplay.webp',
       'assets/images/games/soccer-legend/soccer-legend-gamegou-bicycle-kick-stadium-match.webp',
       'assets/images/games/soccer-legend/soccer-legend-gamegou-power-shot-stadium-fireworks.webp',
-      'assets/images/games/soccer-legend/soccer-legend-gamegou-throw-in-match-gameplay.webp',
+      'assets/images/games/soccer-legend/soccer-legend-gamegou-free-kick-stadium-match.webp',
       'assets/images/games/soccer-legend/soccer-legend-gamegou-training-ground-dribbling-drills.webp',
     ],
     shortDesc: 'A fresh fusion of soccer and puzzle gameplay. Rise from the streets to the world stage and become a true legend.',
@@ -150,13 +150,13 @@ const GAMES = [
     cardNote: 'The original one finger penalty shootout classic.',
     cardNumber: '05',
     playStore: 'https://play.google.com/store/apps/details?id=com.gamegou.PerfectKick.google',
-    appStore: 'https://apps.apple.com/app/perfect-kick/id625542626',
-    heroImage: 'assets/images/games/perfect-kick/perfect-kick-gamegou-play-against-friends-multiplayer.webp',
+    appStore: 'https://apps.apple.com/app/perfect-kick/id539958397',
+    heroImage: 'assets/images/games/perfect-kick/perfect-kick-gamegou-score-perfect-goal-penalty.webp',
     screenshots: [
       'assets/images/games/perfect-kick/perfect-kick-gamegou-customize-gear-peking-opera.webp',
       'assets/images/games/perfect-kick/perfect-kick-gamegou-play-against-friends-multiplayer.webp',
       'assets/images/games/perfect-kick/perfect-kick-gamegou-holiday-seasonal-kits-win.webp',
-      'assets/images/games/perfect-kick/perfect-kick-gamegou-multiplayer-boss-challenge.webp',
+      'assets/images/games/perfect-kick/perfect-kick-gamegou-score-perfect-goal-penalty.webp',
     ],
     shortDesc: 'Control all shootout matches with the flick of a single finger. Google Play Best of 2015 with millions of downloads worldwide.',
     description: `Control all shootout matches with the flick of a single finger. Play for free in unlimited champion challenges against opponents from around the world. Live, real time, and totally addictive.\n\nPerfect Kick is Gamegou's original penalty kick masterpiece, celebrated as Google Play Best of 2015. With millions of downloads worldwide, it remains one of the most beloved mobile football games ever made.`,
@@ -191,7 +191,7 @@ const GAMES = [
       'assets/images/games/perfect-kick-2/perfect-kick-2-powerups-free-kick-strategy.webp',
       'assets/images/games/perfect-kick-2/perfect-kick-2-jerseys-boots-gloves-gear-upgrade.webp',
       'assets/images/games/perfect-kick-2/perfect-kick-2-become-champion-top-leagues.webp',
-      'assets/images/games/perfect-kick-2/perfect-kick-2-daily-awards-rewards-gameplay.webp',
+      'assets/images/games/perfect-kick-2/perfect-kick-2-amazing-daily-awards-soccer.webp',
     ],
     shortDesc: 'Fast 1v1 free kick duels completable in under 3 minutes. Wild power ups, leagues, clubs, and wacky costumes await.',
     description: `Come play this fun free kick game against players worldwide in just under three minutes. Upgrade your stadium, unlock unique gear and power ups, and make your name in the Star Hall of Fame.\n\nPerfect Kick 2 is the next evolution of Gamegou's beloved penalty series. Faster, wilder, and more feature packed than ever. Every match is a quick fire 1v1 duel that alternates between kicker and goalkeeper.`,
@@ -222,11 +222,9 @@ const GAMES = [
     heroImage: 'assets/images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art.webp',
     screenshots: [
       'assets/images/games/soccer-strike/soccer-strike-gamegou-live-match-real-opponents.webp',
-      'assets/images/games/soccer-strike/soccer-strike-gamegou-pvp-football-match-ui.webp',
+      'assets/images/games/soccer-strike/soccer-strike-gamegou-join-team-club-roster.webp',
       'assets/images/games/soccer-strike/soccer-strike-gamegou-team-boost-gift-rewards.webp',
       'assets/images/games/soccer-strike/soccer-strike-gamegou-trophy-collection-stadium.webp',
-      'assets/images/games/soccer-strike/soccer-strike-gamegou-online-shootout-players-worldwide.webp',
-      'assets/images/games/soccer-strike/soccer-strike-gamegou-win-all-trophies.webp',
     ],
     shortDesc: 'Experience the thrill of real time multiplayer soccer! Team up, lead your squad to glory, and reign as the ultimate champion.',
     description: `Experience the thrill of real time multiplayer soccer! Team up, lead your squad to glory, and reign as the ultimate champion in Soccer Strike.\n\nSoccer Strike puts you right at the heart of the action, competing against real players from around the world in fast paced, live matches. Whether you are joining a club, representing your national team, or climbing the global leaderboard, every match is a test of skill, strategy, and teamwork.`,
@@ -317,6 +315,55 @@ const STORE_BUTTONS = `
     </a>
   </div>
 `;
+
+// Phone-size picture choices for script-built cards
+const IMG_SRCSET = {
+ "assets/images/games/perfect-kick-2/perfect-kick-2-amazing-daily-awards-soccer.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-amazing-daily-awards-soccer-mobile.webp 960w, assets/images/games/perfect-kick-2/perfect-kick-2-amazing-daily-awards-soccer.webp 1920w",
+ "assets/images/games/perfect-kick-2/perfect-kick-2-become-champion-top-leagues.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-become-champion-top-leagues-mobile.webp 960w, assets/images/games/perfect-kick-2/perfect-kick-2-become-champion-top-leagues.webp 1920w",
+ "assets/images/games/perfect-kick-2/perfect-kick-2-beginner-league-leaderboard-rankings.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-beginner-league-leaderboard-rankings-mobile.webp 960w, assets/images/games/perfect-kick-2/perfect-kick-2-beginner-league-leaderboard-rankings.webp 1920w",
+ "assets/images/games/perfect-kick-2/perfect-kick-2-challenge-players-worldwide-pvp.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-challenge-players-worldwide-pvp-mobile.webp 960w, assets/images/games/perfect-kick-2/perfect-kick-2-challenge-players-worldwide-pvp.webp 1920w",
+ "assets/images/games/perfect-kick-2/perfect-kick-2-jerseys-boots-gloves-gear-upgrade.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-jerseys-boots-gloves-gear-upgrade-mobile.webp 960w, assets/images/games/perfect-kick-2/perfect-kick-2-jerseys-boots-gloves-gear-upgrade.webp 1920w",
+ "assets/images/games/perfect-kick-2/perfect-kick-2-powerups-free-kick-strategy.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-powerups-free-kick-strategy-mobile.webp 960w, assets/images/games/perfect-kick-2/perfect-kick-2-powerups-free-kick-strategy.webp 1920w",
+ "assets/images/games/perfect-kick-2/perfect-kick-2-shooter-vs-goalie-gameplay.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-shooter-vs-goalie-gameplay-mobile.webp 960w, assets/images/games/perfect-kick-2/perfect-kick-2-shooter-vs-goalie-gameplay.webp 1920w",
+ "assets/images/games/perfect-kick/perfect-kick-gamegou-customize-gear-peking-opera.webp": "assets/images/games/perfect-kick/perfect-kick-gamegou-customize-gear-peking-opera-mobile.webp 427w, assets/images/games/perfect-kick/perfect-kick-gamegou-customize-gear-peking-opera.webp 854w",
+ "assets/images/games/perfect-kick/perfect-kick-gamegou-holiday-seasonal-kits-win.webp": "assets/images/games/perfect-kick/perfect-kick-gamegou-holiday-seasonal-kits-win-mobile.webp 427w, assets/images/games/perfect-kick/perfect-kick-gamegou-holiday-seasonal-kits-win.webp 854w",
+ "assets/images/games/perfect-kick/perfect-kick-gamegou-play-against-friends-multiplayer.webp": "assets/images/games/perfect-kick/perfect-kick-gamegou-play-against-friends-multiplayer-mobile.webp 427w, assets/images/games/perfect-kick/perfect-kick-gamegou-play-against-friends-multiplayer.webp 854w",
+ "assets/images/games/perfect-kick/perfect-kick-gamegou-score-perfect-goal-penalty.webp": "assets/images/games/perfect-kick/perfect-kick-gamegou-score-perfect-goal-penalty-mobile.webp 427w, assets/images/games/perfect-kick/perfect-kick-gamegou-score-perfect-goal-penalty.webp 854w",
+ "assets/images/games/soccer-league/soccer-league-gamegou-club-facilities-upgrade.webp": "assets/images/games/soccer-league/soccer-league-gamegou-club-facilities-upgrade-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-club-facilities-upgrade.webp 1280w",
+ "assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp": "assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp 1280w",
+ "assets/images/games/soccer-league/soccer-league-gamegou-stadium-aerial-view.webp": "assets/images/games/soccer-league/soccer-league-gamegou-stadium-aerial-view-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-stadium-aerial-view.webp 1280w",
+ "assets/images/games/soccer-league/soccer-league-gamegou-tactical-formation-strategy.webp": "assets/images/games/soccer-league/soccer-league-gamegou-tactical-formation-strategy-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-tactical-formation-strategy.webp 1280w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-bicycle-kick-stadium-match.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-bicycle-kick-stadium-match-mobile.webp 405w, assets/images/games/soccer-legend/soccer-legend-gamegou-bicycle-kick-stadium-match.webp 810w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-free-kick-stadium-match.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-free-kick-stadium-match-mobile.webp 405w, assets/images/games/soccer-legend/soccer-legend-gamegou-free-kick-stadium-match.webp 810w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-player-customization-characters.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-player-customization-characters-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-player-customization-characters.webp 1920w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-power-shot-stadium-fireworks.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-power-shot-stadium-fireworks-mobile.webp 405w, assets/images/games/soccer-legend/soccer-legend-gamegou-power-shot-stadium-fireworks.webp 810w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-street-football-brazil-gameplay.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-street-football-brazil-gameplay-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-street-football-brazil-gameplay.webp 1920w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-training-ground-dribbling-drills.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-training-ground-dribbling-drills-mobile.webp 405w, assets/images/games/soccer-legend/soccer-legend-gamegou-training-ground-dribbling-drills.webp 810w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-world-cup-trophy-celebration.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-world-cup-trophy-celebration-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-world-cup-trophy-celebration.webp 1920w",
+ "assets/images/games/soccer-strike/soccer-strike-gamegou-join-team-club-roster.webp": "assets/images/games/soccer-strike/soccer-strike-gamegou-join-team-club-roster-mobile.webp 960w, assets/images/games/soccer-strike/soccer-strike-gamegou-join-team-club-roster.webp 1672w",
+ "assets/images/games/soccer-strike/soccer-strike-gamegou-live-match-real-opponents.webp": "assets/images/games/soccer-strike/soccer-strike-gamegou-live-match-real-opponents-mobile.webp 960w, assets/images/games/soccer-strike/soccer-strike-gamegou-live-match-real-opponents.webp 1600w",
+ "assets/images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art.webp": "assets/images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art-mobile.webp 960w, assets/images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art.webp 1600w",
+ "assets/images/games/soccer-strike/soccer-strike-gamegou-team-boost-gift-rewards.webp": "assets/images/games/soccer-strike/soccer-strike-gamegou-team-boost-gift-rewards-mobile.webp 960w, assets/images/games/soccer-strike/soccer-strike-gamegou-team-boost-gift-rewards.webp 1600w",
+ "assets/images/games/soccer-strike/soccer-strike-gamegou-trophy-collection-stadium.webp": "assets/images/games/soccer-strike/soccer-strike-gamegou-trophy-collection-stadium-mobile.webp 960w, assets/images/games/soccer-strike/soccer-strike-gamegou-trophy-collection-stadium.webp 1600w",
+ "assets/images/games/super-goal/super-goal-gamegou-beach-football-free-kick.webp": "assets/images/games/super-goal/super-goal-gamegou-beach-football-free-kick-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-beach-football-free-kick.webp 1920w",
+ "assets/images/games/super-goal/super-goal-gamegou-beach-soccer-multiplayer.webp": "assets/images/games/super-goal/super-goal-gamegou-beach-soccer-multiplayer-mobile.webp 405w, assets/images/games/super-goal/super-goal-gamegou-beach-soccer-multiplayer.webp 810w",
+ "assets/images/games/super-goal/super-goal-gamegou-cruise-ship-coins-football.webp": "assets/images/games/super-goal/super-goal-gamegou-cruise-ship-coins-football-mobile.webp 405w, assets/images/games/super-goal/super-goal-gamegou-cruise-ship-coins-football.webp 810w",
+ "assets/images/games/super-goal/super-goal-gamegou-free-kick-wall-stadium.webp": "assets/images/games/super-goal/super-goal-gamegou-free-kick-wall-stadium-mobile.webp 405w, assets/images/games/super-goal/super-goal-gamegou-free-kick-wall-stadium.webp 810w",
+ "assets/images/games/super-goal/super-goal-gamegou-neon-city-rooftop-soccer.webp": "assets/images/games/super-goal/super-goal-gamegou-neon-city-rooftop-soccer-mobile.webp 405w, assets/images/games/super-goal/super-goal-gamegou-neon-city-rooftop-soccer.webp 810w",
+ "assets/images/games/super-goal/super-goal-gamegou-penalty-shootout-stadium.webp": "assets/images/games/super-goal/super-goal-gamegou-penalty-shootout-stadium-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-penalty-shootout-stadium.webp 1920w",
+ "assets/images/games/super-goal/super-goal-gamegou-snow-arena-winter-football.webp": "assets/images/games/super-goal/super-goal-gamegou-snow-arena-winter-football-mobile.webp 405w, assets/images/games/super-goal/super-goal-gamegou-snow-arena-winter-football.webp 810w",
+ "assets/images/games/super-goal/super-goal-gamegou-street-soccer-city-gameplay.webp": "assets/images/games/super-goal/super-goal-gamegou-street-soccer-city-gameplay-mobile.webp 405w, assets/images/games/super-goal/super-goal-gamegou-street-soccer-city-gameplay.webp 810w",
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-develop-club-stadium.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-develop-club-stadium-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-develop-club-stadium.webp 1920w",
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-league-standings-honor.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-league-standings-honor-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-league-standings-honor.webp 1920w",
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-manage-national-team.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-manage-national-team-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-manage-national-team.webp 1920w",
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-realtime-3d-match-engine.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-realtime-3d-match-engine-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-realtime-3d-match-engine.webp 1920w",
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-sign-players-transfer-market.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-sign-players-transfer-market-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-sign-players-transfer-market.webp 1920w",
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking.webp 1920w"
+};
+function srcsetAttr(src, sizes) {
+  const s = IMG_SRCSET[src];
+  return s ? ` srcset="${s}" sizes="${sizes}"` : '';
+}
 
 function getStoreButtons(g) {
   return STORE_BUTTONS.replace('{playStore}', g.playStore).replace('{appStore}', g.appStore);
@@ -542,7 +589,7 @@ function renderHome() {
   heroContainer.innerHTML = `
     <div class="hero-showcase" aria-label="Featured games showcase">
       <a class="hero-feature hero-feature-large" href="${gamePageHref(featuredGames[0].id)}" data-id="${featuredGames[0].id}">
-        <img src="${featuredGames[0].heroImage}" alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620">
+        <img src="${featuredGames[0].heroImage}"${srcsetAttr(featuredGames[0].heroImage, '(max-width: 768px) 92vw, 55vw')} alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620">
         <div class="hero-feature-copy">
           <span class="hero-feature-kicker">Featured</span>
           <h3>${featuredGames[0].name}</h3>
@@ -552,7 +599,7 @@ function renderHome() {
       <div class="hero-feature-stack">
         ${featuredGames.slice(1).map(g => `
           <a class="hero-feature hero-feature-small" href="${gamePageHref(g.id)}" data-id="${g.id}">
-            <img src="${g.heroImage}" alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
+            <img src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
             <div class="hero-feature-copy">
               <span class="hero-feature-kicker">${g.badge}</span>
               <h3>${g.name}</h3>
@@ -678,7 +725,7 @@ function gameCardHTML(g, index = 0) {
   return `
     <a class="game-card fade-up" href="${gamePageHref(g.id)}" data-id="${g.id}" role="article" aria-label="Open ${g.name} game page">
       <div class="game-card-img">
-        <img src="${g.heroImage}" alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
+        <img src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
         <span class="game-card-badge">${g.badge}</span>
       </div>
       <div class="game-card-body">
@@ -833,7 +880,7 @@ function initAnimations() {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   }, 100);

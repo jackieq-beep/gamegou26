@@ -1758,14 +1758,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ===== ANIMATIONS ===== */
-.fade-up {
+/* Hidden only once script is running, so content never stays invisible */
+.js .fade-up {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
-.fade-up.visible {
+.js .fade-up.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .fade-up { opacity: 1; transform: none; transition: none; }
 }
 
 .fade-up-delay-1 { transition-delay: 0.1s; }

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.gamegou.com/sitemap.xml
+Sitemap: https://welcome.gamegou.com/sitemap.xml
