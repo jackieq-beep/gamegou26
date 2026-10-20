@@ -44,7 +44,7 @@ const GAMES = [
     badge: 'Most Downloaded',
     cardCta: 'Draw the Shot',
     cardFocus: 'Draw to Score',
-    cardNote: 'Creative one touch shots with 300M plus downloads.',
+    cardNote: 'Creative one touch shots with 50M plus downloads.',
     cardNumber: '02',
     playStore: 'https://play.google.com/store/apps/details?id=com.soccer.football.kick',
     appStore: 'https://apps.apple.com/app/super-goal-fun-soccer-game/id1612182545',
@@ -58,8 +58,8 @@ const GAMES = [
       'assets/images/games/super-goal/super-goal-gamegou-street-soccer-city-gameplay.webp',
       'assets/images/games/super-goal/super-goal-gamegou-beach-soccer-multiplayer.webp',
     ],
-    shortDesc: "Draw a line to kick the ball. Gamegou's most downloaded game with 300 million installs. Play on beaches, rooftops, cruise ships and more.",
-    description: `Draw a line to kick the ball. The direction and route of the ball are completely controlled by you. Use your wisdom to solve puzzles and score top notch goals!\n\nSuper Goal is Gamegou's most downloaded game with 300 million installs worldwide. It revolutionizes mobile soccer with its unique draw to kick mechanic. No complicated buttons, no confusing joysticks. Just pure, creative soccer action.`,
+    shortDesc: "Draw a line to kick the ball. Gamegou's most downloaded game with 50 million installs. Play on beaches, rooftops, cruise ships and more.",
+    description: `Draw a line to kick the ball. The direction and route of the ball are completely controlled by you. Use your wisdom to solve puzzles and score top notch goals!\n\nSuper Goal is Gamegou's most downloaded game with 50 million installs worldwide. It revolutionizes mobile soccer with its unique draw to kick mechanic. No complicated buttons, no confusing joysticks. Just pure, creative soccer action.`,
     features: [
       { title: 'Draw to Kick', desc: 'Simply draw a line on screen to map out the perfect trajectory for your shot.' },
       { title: 'Diverse Locations', desc: 'Play on beach, rooftop, cruise ship, snowy mountains, and many more unique venues.' },
@@ -245,8 +245,8 @@ const NEWS = [
   {
     tag: 'Game Update',
     date: 'April 2025',
-    title: 'Super Goal Hits 300 Million Downloads',
-    excerpt: 'Gamegou\'s flagship casual title Super Goal has reached a landmark 300 million downloads worldwide, cementing its place as one of the most played mobile football games ever.',
+    title: 'Super Goal Passes 50 Million Downloads',
+    excerpt: 'Gamegou\'s flagship casual title Super Goal has passed 50 million downloads worldwide, cementing its place as one of the most played mobile football games ever.',
     image: 'assets/images/games/super-goal/super-goal-gamegou-beach-football-free-kick.webp',
   },
   {
