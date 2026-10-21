@@ -49,6 +49,7 @@ const GAMES = [
     playStore: 'https://play.google.com/store/apps/details?id=com.soccer.football.kick',
     appStore: 'https://apps.apple.com/app/super-goal-fun-soccer-game/id1612182545',
     heroImage: 'assets/images/games/super-goal/super-goal-gamegou-beach-football-free-kick.webp',
+    featureImage: 'assets/images/games/super-goal/super-goal-gamegou-street-soccer-city-gameplay.webp',
     screenshots: [
       'assets/images/games/super-goal/super-goal-gamegou-penalty-shootout-stadium.webp',
       'assets/images/games/super-goal/super-goal-gamegou-cruise-ship-coins-football.webp',
@@ -586,10 +587,12 @@ function renderHome() {
   const featuredIds = ['super-goal', 'soccer-strike', 'top-football-manager'];
   const featuredGames = featuredIds.map(id => GAMES.find(g => g.id === id)).filter(Boolean);
   const heroContainer = document.getElementById('hero-cards');
+  if (!heroContainer) return;
   heroContainer.innerHTML = `
     <div class="hero-showcase" aria-label="Featured games showcase">
-      <a class="hero-feature hero-feature-large" href="${gamePageHref(featuredGames[0].id)}" data-id="${featuredGames[0].id}">
-        <img src="${featuredGames[0].heroImage}"${srcsetAttr(featuredGames[0].heroImage, '(max-width: 768px) 92vw, 55vw')} alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620">
+      <a class="img-fit hero-feature hero-feature-large" href="${gamePageHref(featuredGames[0].id)}" data-id="${featuredGames[0].id}">
+        <img class="img-fill" aria-hidden="true" alt="" src="${(featuredGames[0].featureImage || featuredGames[0].heroImage)}"${srcsetAttr((featuredGames[0].featureImage || featuredGames[0].heroImage), '(max-width: 768px) 92vw, 55vw')}>
+        <img src="${(featuredGames[0].featureImage || featuredGames[0].heroImage)}"${srcsetAttr((featuredGames[0].featureImage || featuredGames[0].heroImage), '(max-width: 768px) 92vw, 55vw')} alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620">
         <div class="hero-feature-copy">
           <span class="hero-feature-kicker">Featured</span>
           <h3>${featuredGames[0].name}</h3>
@@ -598,7 +601,8 @@ function renderHome() {
       </a>
       <div class="hero-feature-stack">
         ${featuredGames.slice(1).map(g => `
-          <a class="hero-feature hero-feature-small" href="${gamePageHref(g.id)}" data-id="${g.id}">
+          <a class="img-fit hero-feature hero-feature-small" href="${gamePageHref(g.id)}" data-id="${g.id}">
+            <img class="img-fill" aria-hidden="true" alt="" src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} loading="lazy">
             <img src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
             <div class="hero-feature-copy">
               <span class="hero-feature-kicker">${g.badge}</span>
@@ -611,6 +615,7 @@ function renderHome() {
   `;
 
   const grid = document.getElementById('home-games-grid');
+  if (!grid) return;
   grid.innerHTML = GAMES.map((g, index) => gameCardHTML(g, index)).join('');
 }
 
@@ -724,7 +729,8 @@ function initHeroCarousel() {
 function gameCardHTML(g, index = 0) {
   return `
     <a class="game-card fade-up" href="${gamePageHref(g.id)}" data-id="${g.id}" role="article" aria-label="Open ${g.name} game page">
-      <div class="game-card-img">
+      <div class="img-fit game-card-img">
+        <img class="img-fill" aria-hidden="true" alt="" src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} loading="lazy">
         <img src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
         <span class="game-card-badge">${g.badge}</span>
       </div>
@@ -746,6 +752,7 @@ function gameCardHTML(g, index = 0) {
 // ===== RENDER GAMES PAGE =====
 function renderGamesPage() {
   const grid = document.getElementById('games-page-grid');
+  if (!grid) return;
   grid.innerHTML = GAMES.map((g, index) => gameCardHTML(g, index)).join('');
 }
 
@@ -760,7 +767,8 @@ function renderGamePage(gameId) {
 
   page.innerHTML = `
     <section class="game-hero" aria-label="${g.name} hero">
-      <div class="game-hero-bg">
+      <div class="img-fit game-hero-bg">
+        <img class="img-fill" aria-hidden="true" alt="" src="${g.heroImage}">
         <img src="${g.heroImage}" alt="${g.name} gameplay" width="1200" height="675" loading="eager">
         <div class="game-hero-overlay"></div>
       </div>
@@ -948,9 +956,14 @@ function initAnalyticsTracking() {
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  renderHome();
-  renderGamesPage();
-  routeFromHash();
+  // The homepage is a one-page app; other pages (like /games/) are plain pages that share this script
+  if (document.getElementById('page-home')) {
+    renderHome();
+    renderGamesPage();
+    routeFromHash();
+  } else {
+    initAnimations();
+  }
   initContactForm();
   initAnalyticsTracking();
 });
