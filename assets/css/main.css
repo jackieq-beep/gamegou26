@@ -237,7 +237,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--amber);
 }
 
-.hero h1 {
+.hero .hero-title {
   font-family: var(--font-display);
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 800;
@@ -247,7 +247,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 1.5rem;
 }
 
-.hero h1 span { color: var(--teal-light); text-shadow: 0 0 30px rgba(10,143,160,0.25); }
+.hero .hero-title span { color: var(--teal-light); text-shadow: 0 0 30px rgba(10,143,160,0.25); }
 
 .hero-desc {
   font-size: 1.1rem;
@@ -1826,7 +1826,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .hero h1 { font-size: 3rem; }
+  .hero .hero-title { font-size: 3rem; }
   .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
   .games-grid { grid-template-columns: 1fr; }
   .about-values { grid-template-columns: 1fr; }
@@ -2023,7 +2023,7 @@ body {
   letter-spacing: 0.22em;
   color: var(--amber);
 }
-.hero h1 {
+.hero .hero-title {
   font-size: clamp(4.1rem, 9.4vw, 9.2rem);
   letter-spacing: -0.055em;
   line-height: 0.9;
@@ -2031,7 +2031,7 @@ body {
   max-width: 760px;
   text-shadow: 0 12px 50px rgba(0,0,0,0.48);
 }
-.hero h1 span {
+.hero .hero-title span {
   color: #ffffff;
   text-shadow: none;
 }
@@ -2269,7 +2269,7 @@ body {
   .sharp-hero { min-height: auto; }
   .sharp-hero::before { opacity: 0.72; }
   .hero-content { min-height: auto; padding-top: 4.5rem; }
-  .hero h1 { font-size: clamp(3.6rem, 16vw, 5.4rem); }
+  .hero .hero-title { font-size: clamp(3.6rem, 16vw, 5.4rem); }
   .hero-desc { max-width: 92%; }
   .hero-stats { grid-template-columns: 1fr; width: 100%; }
   .stat-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.16); }
@@ -2687,7 +2687,7 @@ body {
   .hero-content {
     padding: 4rem 1.2rem 2.5rem;
   }
-  .hero h1 {
+  .hero .hero-title {
     font-size: clamp(3.05rem, 14vw, 4.8rem);
   }
   .hero-actions {
@@ -2975,8 +2975,8 @@ body.cookie-banner-visible {
 }
 /* Hero font update */
 .hero-title,
-.hero h1,
-.hero-content h1 {
+.hero .hero-title,
+.hero-content .hero-title {
   font-family: 'Teko', Impact, 'Arial Narrow Bold', sans-serif !important;
   font-size: clamp(5.5rem, 9vw, 10rem) !important;
   line-height: 0.78 !important;
@@ -2990,8 +2990,8 @@ body.cookie-banner-visible {
 }
 
 .hero-title span,
-.hero h1 span,
-.hero-content h1 span {
+.hero .hero-title span,
+.hero-content .hero-title span {
   font-family: 'Teko', Impact, 'Arial Narrow Bold', sans-serif !important;
   color: #ffffff !important;
 }
@@ -3042,3 +3042,46 @@ body.cookie-banner-visible {
 
 /* The game page background stays full width behind the text */
 .game-hero-bg.img-fit { position: absolute; inset: 0; }
+
+/* ===== HOMEPAGE HEADINGS (SEO) ===== */
+/* The keyword heading keeps the small label look; the slogan keeps the big display look */
+h1.hero-eyebrow { margin-top: 0; line-height: inherit; }
+p.hero-title { margin-top: 0; }
+
+/* ===== READABLE LABELS ON PHONES ===== */
+/* Small card labels stay at least 12px so they're easy to read on a phone */
+.game-card-badge,
+.game-card-focus,
+.hero-feature-kicker { font-size: max(12px, 0.72rem); }
+
+/* Buttons inside text blocks keep their own colours */
+.legal-card a.btn-primary { color: #000; display: inline-flex; margin-top: 0.5rem; text-decoration: none; }
+
+/* ===== FASTER HOMEPAGE BACKGROUND ===== */
+@media (max-width: 768px) {
+  .sharp-hero::before {
+    background:
+      linear-gradient(90deg, rgba(5,8,9,0.96) 0%, rgba(5,8,9,0.78) 44%, rgba(5,8,9,0.34) 72%, rgba(5,8,9,0.84) 100%),
+      linear-gradient(180deg, rgba(5,8,9,0.10) 0%, rgba(5,8,9,0.88) 100%),
+      url('../images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art-mobile.webp') center right / cover no-repeat;
+  }
+}
+
+/* ===== WHOLE PICTURES: centring and large homepage cards ===== */
+/* Pictures sit in the middle of their frames */
+.img-fit > img:not(.img-fill) { position: absolute; inset: 0; }
+/* The four large homepage cards show the picture on top, like the others, so it isn't squeezed into a tall column */
+@media (min-width: 1121px) {
+  .home-games-grid .game-card:nth-child(1),
+  .home-games-grid .game-card:nth-child(2),
+  .home-games-grid .game-card:nth-child(6),
+  .home-games-grid .game-card:nth-child(7) { display: flex; flex-direction: column; min-height: 0; }
+  .home-games-grid .game-card:nth-child(1) .game-card-img,
+  .home-games-grid .game-card:nth-child(2) .game-card-img,
+  .home-games-grid .game-card:nth-child(6) .game-card-img,
+  .home-games-grid .game-card:nth-child(7) .game-card-img { aspect-ratio: 16 / 9; height: auto; min-height: 0; }
+  .home-games-grid .game-card:nth-child(1) .game-card-body,
+  .home-games-grid .game-card:nth-child(2) .game-card-body,
+  .home-games-grid .game-card:nth-child(6) .game-card-body,
+  .home-games-grid .game-card:nth-child(7) .game-card-body { padding: 1.5rem 1.6rem 1.6rem; justify-content: flex-start; }
+}

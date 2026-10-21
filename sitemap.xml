@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://welcome.gamegou.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/top-football-manager/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/super-goal/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/soccer-legend/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/soccer-league/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/perfect-kick/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/perfect-kick-2/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://welcome.gamegou.com/games/soccer-strike/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://welcome.gamegou.com/privacy-policy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://welcome.gamegou.com/terms/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://welcome.gamegou.com/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/top-football-manager/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/super-goal/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/soccer-legend/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/soccer-league/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/perfect-kick/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/perfect-kick-2/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/games/soccer-strike/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/privacy-policy/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://welcome.gamegou.com/terms/</loc><lastmod>2026-10-21</lastmod></url>
 </urlset>

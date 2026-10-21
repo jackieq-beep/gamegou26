@@ -14,7 +14,7 @@ const GAMES = [
     cardNumber: '01',
     playStore: 'https://play.google.com/store/apps/details?id=com.gamegou.football',
     appStore: 'https://apps.apple.com/app/top-football-manager-2026/id1068396437',
-    heroImage: 'assets/images/games/top-football-manager/top-football-manager-gamegou-realtime-3d-match-engine.webp',
+    heroImage: 'assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp',
     screenshots: [
       'assets/images/games/top-football-manager/top-football-manager-gamegou-develop-club-stadium.webp',
       'assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking.webp',
@@ -48,8 +48,8 @@ const GAMES = [
     cardNumber: '02',
     playStore: 'https://play.google.com/store/apps/details?id=com.soccer.football.kick',
     appStore: 'https://apps.apple.com/app/super-goal-fun-soccer-game/id1612182545',
-    heroImage: 'assets/images/games/super-goal/super-goal-gamegou-beach-football-free-kick.webp',
-    featureImage: 'assets/images/games/super-goal/super-goal-gamegou-street-soccer-city-gameplay.webp',
+    heroImage: 'assets/images/games/super-goal/super-goal-gamegou-card.webp',
+    featureImage: 'assets/images/games/super-goal/super-goal-gamegou-card-tall.webp',
     screenshots: [
       'assets/images/games/super-goal/super-goal-gamegou-penalty-shootout-stadium.webp',
       'assets/images/games/super-goal/super-goal-gamegou-cruise-ship-coins-football.webp',
@@ -85,7 +85,7 @@ const GAMES = [
     cardNumber: '03',
     playStore: 'https://play.google.com/store/apps/details?id=score.footballgame.kick.soccerlegend',
     appStore: 'https://apps.apple.com/app/soccer-legend/id6502252680',
-    heroImage: 'assets/images/games/soccer-legend/soccer-legend-gamegou-player-customization-characters.webp',
+    heroImage: 'assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp',
     screenshots: [
       'assets/images/games/soccer-legend/soccer-legend-gamegou-world-cup-trophy-celebration.webp',
       'assets/images/games/soccer-legend/soccer-legend-gamegou-street-football-brazil-gameplay.webp',
@@ -152,7 +152,7 @@ const GAMES = [
     cardNumber: '05',
     playStore: 'https://play.google.com/store/apps/details?id=com.gamegou.PerfectKick.google',
     appStore: 'https://apps.apple.com/app/perfect-kick/id539958397',
-    heroImage: 'assets/images/games/perfect-kick/perfect-kick-gamegou-score-perfect-goal-penalty.webp',
+    heroImage: 'assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp',
     screenshots: [
       'assets/images/games/perfect-kick/perfect-kick-gamegou-customize-gear-peking-opera.webp',
       'assets/images/games/perfect-kick/perfect-kick-gamegou-play-against-friends-multiplayer.webp',
@@ -185,7 +185,7 @@ const GAMES = [
     cardNumber: '06',
     playStore: 'https://play.google.com/store/apps/details?id=com.gamegou.perfectkick2',
     appStore: 'https://apps.apple.com/app/perfect-kick-2/id1475459866',
-    heroImage: 'assets/images/games/perfect-kick-2/perfect-kick-2-shooter-vs-goalie-gameplay.webp',
+    heroImage: 'assets/images/games/perfect-kick-2/perfect-kick-2-card.webp',
     screenshots: [
       'assets/images/games/perfect-kick-2/perfect-kick-2-challenge-players-worldwide-pvp.webp',
       'assets/images/games/perfect-kick-2/perfect-kick-2-beginner-league-leaderboard-rankings.webp',
@@ -220,7 +220,7 @@ const GAMES = [
     cardNumber: '07',
     playStore: 'https://play.google.com/store/apps/details?id=soccer.strike.football.footballgames',
     appStore: 'https://apps.apple.com/app/soccer-strike/id6473498208',
-    heroImage: 'assets/images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art.webp',
+    heroImage: 'assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp',
     screenshots: [
       'assets/images/games/soccer-strike/soccer-strike-gamegou-live-match-real-opponents.webp',
       'assets/images/games/soccer-strike/soccer-strike-gamegou-join-team-club-roster.webp',
@@ -359,7 +359,14 @@ const IMG_SRCSET = {
  "assets/images/games/top-football-manager/top-football-manager-gamegou-manage-national-team.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-manage-national-team-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-manage-national-team.webp 1920w",
  "assets/images/games/top-football-manager/top-football-manager-gamegou-realtime-3d-match-engine.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-realtime-3d-match-engine-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-realtime-3d-match-engine.webp 1920w",
  "assets/images/games/top-football-manager/top-football-manager-gamegou-sign-players-transfer-market.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-sign-players-transfer-market-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-sign-players-transfer-market.webp 1920w",
- "assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking.webp 1920w"
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-tactics-formation-attacking.webp 1920w",
+ "assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp": "assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp 1478w",
+ "assets/images/games/super-goal/super-goal-gamegou-card.webp": "assets/images/games/super-goal/super-goal-gamegou-card-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-card.webp 1766w",
+ "assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp": "assets/images/games/soccer-legend/soccer-legend-gamegou-card-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp 1690w",
+ "assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp": "assets/images/games/perfect-kick/perfect-kick-gamegou-card-mobile.webp 540w, assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp 675w",
+ "assets/images/games/perfect-kick-2/perfect-kick-2-card.webp": "assets/images/games/perfect-kick-2/perfect-kick-2-card-mobile.webp 540w, assets/images/games/perfect-kick-2/perfect-kick-2-card.webp 874w",
+ "assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp": "assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp 540w, assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp 824w",
+ "assets/images/games/super-goal/super-goal-gamegou-card-tall.webp": "assets/images/games/super-goal/super-goal-gamegou-card-tall-mobile.webp 540w, assets/images/games/super-goal/super-goal-gamegou-card-tall.webp 810w"
 };
 function srcsetAttr(src, sizes) {
   const s = IMG_SRCSET[src];
@@ -525,15 +532,15 @@ function setPageMeta(page, gameId = null) {
   const twitterDescription = document.querySelector('meta[name="twitter:description"]');
   const game = gameId ? GAMES.find(g => g.id === gameId) : null;
 
-  let title = 'Gamegou | Mobile Football Games Developer and Publisher';
-  let desc = 'Gamegou creates mobile football games played by millions worldwide. Discover Soccer Strike, Perfect Kick, Super Goal, Soccer Legend and more.';
+  let title = "Mobile Football & Soccer Games for Android & iOS | Gamegou";
+  let desc = "Free mobile football games from Gamegou, downloaded 300M+ times. Play Soccer Strike, Super Goal, Top Football Manager and Perfect Kick on Android & iOS.";
 
   if (game) {
     title = `${game.name} | Gamegou Mobile Football Games`;
     desc = game.shortDesc;
   } else if (page === 'games') {
-    title = 'Gamegou Games | Mobile Football Game Portfolio';
-    desc = 'Explore Gamegou mobile football games across multiplayer, casual, management, and puzzle football experiences.';
+    title = "Free Mobile Football & Soccer Games | Gamegou";
+    desc = "Browse all 7 Gamegou football games for Android and iOS: live multiplayer, penalty shootouts, soccer puzzles, offline play and club management.";
   } else if (page === 'partners') {
     title = 'Gamegou Media and Brand Partnerships | In Game Advertising';
     desc = 'Contact Gamegou for media company partnerships, direct brand campaigns, and in game advertising opportunities across mobile football audiences.';

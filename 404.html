@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>if('IntersectionObserver' in window)document.documentElement.classList.add('js');</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Page Not Found | Gamegou</title>
+<meta content="This page could not be found. Explore Gamegou mobile football games instead." name="description"/>
+<meta content="noindex, follow" name="robots"/>
+<link href="/assets/images/icons/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/images/icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&amp;family=Barlow:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/css/main.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+<nav aria-label="Main navigation" class="navbar" id="navbar" role="navigation">
+<div class="nav-logo"><a aria-label="Gamegou Home" href="/"><img alt="Gamegou" height="92" src="/assets/images/logo/gamegou-logo-on-dark.png" width="480"/></a></div>
+<ul class="nav-links" role="list">
+<li><a href="/">Home</a></li>
+<li><a href="/games/">Games</a></li>
+<li><a href="/index.html#about">About</a></li>
+<li><a href="/index.html#partners">Partners</a></li>
+<li><a class="nav-cta" href="/index.html#contact">Contact Us</a></li>
+</ul>
+<button aria-expanded="false" aria-label="Toggle mobile menu" class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<nav aria-label="Mobile navigation" class="nav-mobile" id="mobile-nav">
+<a href="/">Home</a>
+<a href="/games/">Games</a>
+<a href="/index.html#about">About</a>
+<a href="/index.html#partners">Partners</a>
+<a href="/index.html#contact">Contact</a>
+</nav>
+</header>
+<main aria-label="Page not found" class="page active" id="page-404">
+<section class="section">
+<div class="container legal-page">
+<div class="section-label">Error 404</div>
+<h1 class="section-title">Page not <span>found</span></h1>
+<p class="section-desc legal-intro">The page you were looking for has moved or doesn't exist. Try one of our games instead.</p>
+<div class="legal-card">
+<h2>Gamegou games</h2>
+<ul>
+<li><a href="/games/top-football-manager/">Top Football Manager</a></li>
+<li><a href="/games/super-goal/">Super Goal</a></li>
+<li><a href="/games/soccer-legend/">Soccer Legend</a></li>
+<li><a href="/games/soccer-league/">Soccer League</a></li>
+<li><a href="/games/perfect-kick/">Perfect Kick</a></li>
+<li><a href="/games/perfect-kick-2/">Perfect Kick 2</a></li>
+<li><a href="/games/soccer-strike/">Soccer Strike</a></li>
+</ul>
+<p><a class="btn-primary" href="/">Back to the homepage</a></p>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-grid">
+<div class="footer-brand">
+<img alt="Gamegou" height="92" src="/assets/images/logo/gamegou-logo-on-dark.png" width="480"/>
+<p>Mobile football games played around the world, from quick scoring sessions to multiplayer competition and long term club management.</p>
+<div class="footer-social">
+<a aria-label="Gamegou on Facebook" class="social-link" href="https://www.facebook.com/gamegou/" rel="noopener noreferrer" target="_blank">f</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Games</h4>
+<ul role="list">
+<li><a href="/games/top-football-manager/">Top Football Manager</a></li>
+<li><a href="/games/super-goal/">Super Goal</a></li>
+<li><a href="/games/soccer-legend/">Soccer Legend</a></li>
+<li><a href="/games/soccer-league/">Soccer League</a></li>
+<li><a href="/games/perfect-kick/">Perfect Kick</a></li>
+<li><a href="/games/perfect-kick-2/">Perfect Kick 2</a></li>
+<li><a href="/games/soccer-strike/">Soccer Strike</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul role="list">
+<li><a href="/index.html#about" onclick="navigate('about'); return false;">About Us</a></li>
+<li><a href="/index.html#partners" onclick="navigate('partners'); return false;">Partners</a></li>
+<li><a href="/index.html#contact" onclick="navigate('contact'); return false;">Contact</a></li>
+<li><a href="/privacy-policy/">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul role="list">
+<li><span>General Inquiries</span></li>
+<li><span>adsmanager@gamegou.com</span></li>
+<li><a href="https://www.facebook.com/gamegou/" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Gamegou. All rights reserved.</p>
+<div class="footer-legal">
+<a href="/privacy-policy/">Privacy Policy</a>
+<a href="/terms/">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (navbar) window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
+  if (hamburger && mobileNav) hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+</script>
+<script defer src="/assets/js/analytics.js"></script>
+</body>
+</html>
