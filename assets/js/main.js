@@ -110,34 +110,35 @@ const GAMES = [
   {
     id: 'soccer-league',
     name: 'Soccer League',
-    tagline: 'Multiplayer Penalty Kick Showdown',
+    tagline: 'Real-Time Multiplayer Soccer',
     genre: 'Sports • Multiplayer • Competitive',
     rating: '4.0',
     badge: 'Real Time PvP',
     cardCta: 'Challenge Players',
     cardFocus: 'Real Time PvP',
-    cardNote: 'Play both kicker and keeper in live penalty duels.',
+    cardNote: 'Team up with players worldwide in live matches.',
     cardNumber: '04',
-    playStore: 'https://play.google.com/store/apps/details?id=com.gamegou.soccer',
-    appStore: 'https://apps.apple.com/app/soccer-league/id1451809128',
+    playStore: 'https://play.google.com/store/apps/details?id=com.PerfectKick.Russia2018',
+    appStore: '',
     heroImage: 'assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp',
     screenshots: [
       'assets/images/games/soccer-league/soccer-league-gamegou-stadium-aerial-view.webp',
       'assets/images/games/soccer-league/soccer-league-gamegou-club-facilities-upgrade.webp',
       'assets/images/games/soccer-league/soccer-league-gamegou-tactical-formation-strategy.webp',
     ],
-    shortDesc: 'Real time multiplayer penalty kick showdowns. Play as kicker and keeper in stunning 3D against opponents worldwide.',
-    description: `New authentic multiplayer penalty kick game Soccer League puts you in the roles of football kicker and keeper for an ultimate showdown. Enjoy live, 3D gameplay with a simple flick of a finger.\n\nBuild your dream team of kickers and train them in special skills. Go head to head with opponents from around the world in free and unlimited challenges. Win rich rewards every week!`,
+    shortDesc: 'Real-time multiplayer soccer. Team up with players worldwide, join tournaments and play for your club or your country.',
+    description: `Soccer League is a real-time multiplayer soccer game. Team up with players from around the world in exciting live matches and lead your team to victory.
+
+Join challenging competitive tournaments and win your place with both clubs and national teams, while you build up your club's stadium and facilities.`,
     features: [
-      { title: 'Live Multiplayer', desc: 'Real human opponents in every match. No AI. Pure competitive football.' },
-      { title: 'Stunning Visuals', desc: 'Vivid 3D graphics with slow motion replays for the most spectacular moments.' },
-      { title: 'Intuitive Controls', desc: 'Simple finger flick operation that anyone can learn in seconds.' },
-      { title: 'Team Management', desc: 'Train your kickers in diverse penalty tactics and skills for weekly tournaments.' },
+      { title: "Real-Time Matches", desc: "Play live soccer matches with and against real players from around the world." },
+      { title: "Clubs and Countries", desc: "Compete for your club or your national team and win your place." },
+      { title: "Competitive Tournaments", desc: "Join challenging tournaments and lead your team to the title." },
+      { title: "Build Your Club", desc: "Upgrade your stadium and club facilities as your team grows." },
     ],
-    platform: 'Android and iOS',
+    platform: 'Android',
     genre2: 'Sports / Multiplayer',
-    size: '100 MB',
-    updated: '2024',
+        updated: '2026',
   },
   {
     id: 'perfect-kick',
@@ -411,11 +412,11 @@ const GAME_SEO_DETAILS = {
   },
   "soccer-league": {
     "why": [
-      "Real time penalty duels give players a simple competitive format that is easy to understand.",
-      "Playing as both kicker and keeper creates a full shootout experience.",
-      "Team upgrades, tournaments, and live opponents support repeat play."
+      "Live matches against real players give every game a competitive edge.",
+      "Playing for both clubs and national teams gives you more to fight for.",
+      "Tournaments and club upgrades give you goals beyond a single match."
     ],
-    "platform": "Soccer League is available on Android and iOS for mobile players who want live multiplayer penalty kick competition."
+    "platform": "Soccer League is available on Google Play for Android players who want real-time multiplayer soccer with clubs, national teams and tournaments."
   },
   "perfect-kick": {
     "why": [
@@ -832,7 +833,7 @@ function renderGamePage(gameId) {
           <h3>Game Info</h3>
           <div class="game-info-row"><span>Platform</span><span>${g.platform}</span></div>
           <div class="game-info-row"><span>Genre</span><span>${g.genre2}</span></div>
-          <div class="game-info-row"><span>Size</span><span>${g.size}</span></div>
+          ${g.size ? `<div class="game-info-row"><span>Size</span><span>${g.size}</span></div>` : ''}
           <div class="game-info-row"><span>Updated</span><span>${g.updated}</span></div>
         </div>
         <div class="game-info-card">
