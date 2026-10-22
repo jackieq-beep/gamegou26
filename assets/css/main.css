@@ -3085,3 +3085,41 @@ p.hero-title { margin-top: 0; }
   .home-games-grid .game-card:nth-child(6) .game-card-body,
   .home-games-grid .game-card:nth-child(7) .game-card-body { padding: 1.5rem 1.6rem 1.6rem; justify-content: flex-start; }
 }
+
+/* ===== LAYOUT POLISH FOR PHONES AND TABLETS ===== */
+/* About: two columns on wide screens, stacked on phones and tablets */
+.about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5rem; align-items: start; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } }
+
+/* Partners */
+.partner-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.partner-card { border: 1px solid var(--border); background: rgba(255,255,255,0.02); padding: 1.5rem; }
+.partner-card h3 { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.1; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--text-primary); }
+.partner-card p { margin: 0; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; }
+.partner-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.partner-email { margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; }
+.partner-email span { color: var(--text-primary); user-select: all; overflow-wrap: anywhere; }
+@media (max-width: 900px) { .partner-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Stats boxes: no empty gap between figure and caption on smaller screens */
+@media (max-width: 900px) {
+  .credibility-card { min-height: 0; justify-content: flex-start; gap: 0.5rem; }
+}
+
+/* Large featured card: pictures inside <picture> behave like the others */
+.img-fit > picture { display: contents; }
+.img-fit > picture > img.img-fill { position: absolute; inset: -10%; width: 120%; height: 120%; max-width: none; object-fit: cover; filter: blur(24px) saturate(1.2) brightness(0.6); transform: none !important; pointer-events: none; }
+.img-fit > picture.img-main-pic > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+
+/* Touchscreens (phones, tablets, touch laptops): bigger tap areas for small links */
+@media (pointer: coarse) {
+  .nav-links a { padding-top: 12px; padding-bottom: 12px; }
+  .footer a, .breadcrumbs a, .game-hero-back, .legal-card a:not(.btn-primary), #page-contact a[href^="mailto:"], .legal-page a[href^="mailto:"] {
+    display: inline-block; padding-top: 6px; padding-bottom: 6px;
+  }
+  .footer ul li, .footer-links li { margin-bottom: 0; }
+}
+
+/* Stats heading: it is alone in its row, so it uses the full width */
+.credibility-head { grid-template-columns: minmax(0, 1fr); }
+.credibility-head .section-title { max-width: 22ch; }

@@ -598,8 +598,8 @@ function renderHome() {
   heroContainer.innerHTML = `
     <div class="hero-showcase" aria-label="Featured games showcase">
       <a class="img-fit hero-feature hero-feature-large" href="${gamePageHref(featuredGames[0].id)}" data-id="${featuredGames[0].id}">
-        <img class="img-fill" aria-hidden="true" alt="" src="${(featuredGames[0].featureImage || featuredGames[0].heroImage)}"${srcsetAttr((featuredGames[0].featureImage || featuredGames[0].heroImage), '(max-width: 768px) 92vw, 55vw')}>
-        <img src="${(featuredGames[0].featureImage || featuredGames[0].heroImage)}"${srcsetAttr((featuredGames[0].featureImage || featuredGames[0].heroImage), '(max-width: 768px) 92vw, 55vw')} alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620">
+        <picture class="img-fill-pic"><source media="(min-width: 1121px)" srcset="${featuredGames[0].featureImage || featuredGames[0].heroImage}"><img class="img-fill" aria-hidden="true" alt="" src="${featuredGames[0].heroImage}"></picture>
+        <picture class="img-main-pic"><source media="(min-width: 1121px)" srcset="${featuredGames[0].featureImage || featuredGames[0].heroImage}"><img src="${featuredGames[0].heroImage}"${srcsetAttr(featuredGames[0].heroImage, '(max-width: 768px) 92vw, 55vw')} alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620"></picture>
         <div class="hero-feature-copy">
           <span class="hero-feature-kicker">Featured</span>
           <h3>${featuredGames[0].name}</h3>
