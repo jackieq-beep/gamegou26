@@ -84,7 +84,7 @@ const GAMES = [
     cardNote: 'A street to stadium career built around clever goals.',
     cardNumber: '03',
     playStore: 'https://play.google.com/store/apps/details?id=score.footballgame.kick.soccerlegend',
-    appStore: 'https://apps.apple.com/app/soccer-legend/id6502252680',
+    appStore: '',
     heroImage: 'assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp',
     screenshots: [
       'assets/images/games/soccer-legend/soccer-legend-gamegou-world-cup-trophy-celebration.webp',
@@ -219,7 +219,7 @@ const GAMES = [
     cardNote: 'Team up, climb rankings and compete in global matches.',
     cardNumber: '07',
     playStore: 'https://play.google.com/store/apps/details?id=soccer.strike.football.footballgames',
-    appStore: 'https://apps.apple.com/app/soccer-strike/id6473498208',
+    appStore: 'https://apps.apple.com/app/soccer-strike-multiplayer/id6471042651',
     heroImage: 'assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp',
     screenshots: [
       'assets/images/games/soccer-strike/soccer-strike-gamegou-live-match-real-opponents.webp',
@@ -374,7 +374,10 @@ function srcsetAttr(src, sizes) {
 }
 
 function getStoreButtons(g) {
-  return STORE_BUTTONS.replace('{playStore}', g.playStore).replace('{appStore}', g.appStore);
+  const html = STORE_BUTTONS.replace('{playStore}', g.playStore);
+  // A game without an App Store listing only shows the Google Play button
+  if (!g.appStore) return html.replace(/\s*<a href="\{appStore\}"[\s\S]*?<\/a>/, '');
+  return html.replace('{appStore}', g.appStore);
 }
 
 function gamePageHref(gameId) {

@@ -1,4 +1,16 @@
+# Everyone, including search engines and AI assistants, may read the whole site
 User-agent: *
+Allow: /
+
+# AI search and answer engines (these decide whether the site is cited)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Googlebot
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://welcome.gamegou.com/sitemap.xml

@@ -3123,3 +3123,15 @@ p.hero-title { margin-top: 0; }
 /* Stats heading: it is alone in its row, so it uses the full width */
 .credibility-head { grid-template-columns: minmax(0, 1fr); }
 .credibility-head .section-title { max-width: 22ch; }
+
+/* ===== QUESTIONS AND ANSWERS ===== */
+.faq-section { border-top: 1px solid var(--border); }
+.faq-list { display: grid; gap: 0.6rem; max-width: 900px; margin-top: 1.5rem; }
+.faq-item { border: 1px solid var(--border); background: rgba(15, 23, 27, 0.92); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.25rem; min-height: 48px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--amber); font-size: 1.5rem; line-height: 1; flex: none; transition: transform 0.2s ease; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.faq-item h3 { margin: 0; font-size: 1.05rem; font-weight: 600; line-height: 1.35; color: var(--text-primary); }
+.faq-item p { margin: 0; padding: 0 1.25rem 1.2rem; color: var(--text-secondary); line-height: 1.7; max-width: 70ch; }
