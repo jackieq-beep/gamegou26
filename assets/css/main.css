@@ -3286,3 +3286,14 @@ p.hero-title { margin-top: 0; }
 @media (max-width: 700px) {
   .games-under-hero, .static-related-section, .static-main > .section:not(.faq-section), #page-games > .section, #page-about > .section, #page-partners > .section, #page-contact > .section, #page-terms > .section, #page-404 > .section, .legal-hero-section { background-size: 200px 100%, auto, auto !important; background-position: right -110px top, 0 0, 0 0 !important; }
 }
+
+/* ===== GAME NAMES NEVER SPLIT ACROSS LINES ===== */
+/* Only when the fitting script is running, so a page without scripts can still wrap */
+.fit-names .nowrap { white-space: nowrap; }
+/* The name span takes its look from the text around it, never from rules aimed at highlighted words */
+.nowrap {
+  display: inline !important; color: inherit !important; font: inherit !important;
+  letter-spacing: inherit !important; text-transform: inherit !important; text-shadow: inherit !important;
+  background: none !important; border: 0 !important; padding: 0 !important; margin: 0 !important;
+  clip-path: none !important; width: auto !important; height: auto !important;
+}

@@ -451,13 +451,13 @@ function gameSeoSectionHTML(g) {
         <div class="game-seo-grid">
           <article class="game-seo-card">
             <div class="section-label">Why players like it</div>
-            <h2 id="why-players-heading">Why players keep coming back to ${g.name}</h2>
-            <ul>${seo.why.map(point => `<li>${point}</li>`).join('')}</ul>
+            <h2 id="why-players-heading">Why players keep coming back to ${keepNames(g.name)}</h2>
+            <ul>${seo.why.map(point => `<li>${keepNames(point)}</li>`).join('')}</ul>
           </article>
           <article class="game-seo-card">
             <div class="section-label">Available platforms</div>
-            <h2>Play ${g.name} on mobile</h2>
-            <p>${seo.platform}</p>
+            <h2>Play ${keepNames(g.name)} on mobile</h2>
+            <p>${keepNames(seo.platform)}</p>
             <div class="platform-pill-row"><span>Android</span><span>iOS</span></div>
           </article>
         </div>
@@ -465,6 +465,10 @@ function gameSeoSectionHTML(g) {
     </section>
   `;
 }
+
+// Keep game names on one line wherever they appear in text
+const GAME_NAME_RE = /(?<![\w-])(Top Football Manager|Perfect Kick 2|Perfect Kick(?! 2)|Super Goal|Soccer Legend|Soccer League|Soccer Strike)(?![\w-])/gi;
+function keepNames(s) { return String(s == null ? '' : s).replace(GAME_NAME_RE, '<span class="nowrap">$1</span>'); }
 
 // ===== ROUTER =====
 let currentPage = 'home';
@@ -604,7 +608,7 @@ function renderHome() {
         <picture class="img-main-pic"><source media="(min-width: 1121px)" srcset="${featuredGames[0].featureImage || featuredGames[0].heroImage}"><img src="${featuredGames[0].heroImage}"${srcsetAttr(featuredGames[0].heroImage, '(max-width: 768px) 92vw, 55vw')} alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620"></picture>
         <div class="hero-feature-copy">
           <span class="hero-feature-kicker">Featured</span>
-          <h3>${featuredGames[0].name}</h3>
+          <h3>${keepNames(featuredGames[0].name)}</h3>
           <p>${featuredGames[0].tagline}</p>
         </div>
       </a>
@@ -615,7 +619,7 @@ function renderHome() {
             <img src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
             <div class="hero-feature-copy">
               <span class="hero-feature-kicker">${g.badge}</span>
-              <h3>${g.name}</h3>
+              <h3>${keepNames(g.name)}</h3>
             </div>
           </a>
         `).join('')}
@@ -747,10 +751,10 @@ function gameCardHTML(g, index = 0) {
         <div class="game-card-topline">
           <span class="game-card-focus">${g.cardFocus || g.genre2}</span>
         </div>
-        <h3 class="game-card-title">${g.name}</h3>
-        <p class="game-card-desc">${g.shortDesc}</p>
+        <h3 class="game-card-title">${keepNames(g.name)}</h3>
+        <p class="game-card-desc">${keepNames(g.shortDesc)}</p>
         <div class="game-card-meta">
-          <span class="game-card-note">${g.cardNote || g.tagline}</span>
+          <span class="game-card-note">${keepNames(g.cardNote || g.tagline)}</span>
           <span class="game-card-cta">${g.cardCta}</span>
         </div>
       </div>
@@ -772,7 +776,7 @@ function renderGamePage(gameId) {
 
   const page = document.getElementById('page-game');
   const storeButtons = getStoreButtons(g);
-  const descParagraphs = g.description.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('');
+  const descParagraphs = g.description.split('\n\n').map(p => `<p>${keepNames(p.trim())}</p>`).join('');
 
   page.innerHTML = `
     <section class="game-hero" aria-label="${g.name} hero">
@@ -783,7 +787,7 @@ function renderGamePage(gameId) {
       </div>
       <div class="game-hero-content">
         <button class="game-hero-back" onclick="navigate('games')" aria-label="Back to games">← All Games</button>
-        <h1 class="game-hero-title">${g.name}</h1>
+        <h1 class="game-hero-title">${keepNames(g.name)}</h1>
         <p class="game-hero-tagline">${g.tagline}</p>
         <div class="game-hero-meta">
           <span class="game-badge">${g.genre}</span>
@@ -814,14 +818,14 @@ function renderGamePage(gameId) {
     <div class="game-art-band" style="--game-art: url('/${g.heroImage.replace('.webp', '-mobile.webp')}')">
     <div class="game-description">
       <div class="game-desc-text">
-        <h2>About ${g.name}</h2>
+        <h2>About ${keepNames(g.name)}</h2>
         ${descParagraphs}
         <div class="game-features">
           ${g.features.map(f => `
             <div class="game-feature fade-up">
               <div class="game-feature-text">
                 <h4>${f.title}</h4>
-                <p>${f.desc}</p>
+                <p>${keepNames(f.desc)}</p>
               </div>
             </div>
           `).join('')}
