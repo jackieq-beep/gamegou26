@@ -3136,17 +3136,19 @@ p.hero-title { margin-top: 0; }
 .faq-item h3 { margin: 0; font-size: 1.05rem; font-weight: 600; line-height: 1.35; color: var(--text-primary); }
 .faq-item p { margin: 0; padding: 0 1.25rem 1.2rem; color: var(--text-secondary); line-height: 1.7; max-width: 70ch; }
 
-/* ===== CLEAN, PREMIUM LOOK: NO OUTLINES ===== */
-/* Boxes are soft panels instead of outlined frames; sections are separated by space, not lines */
+/* ===== PREMIUM LOOK: NO OUTLINES, SPORT-CUT CORNERS, GLASS OVER GAME ART ===== */
 :root {
-  --panel: rgba(255, 255, 255, 0.035);
-  --panel-hover: rgba(255, 255, 255, 0.06);
-  --panel-strong: rgba(255, 255, 255, 0.05);
-  --panel-radius: 16px;
-  --soft-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.75);
+  --cut: 22px;
+  --cut-sm: 14px;
+  --cut-shape: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+  --cut-shape-sm: polygon(0 0, calc(100% - var(--cut-sm)) 0, 100% var(--cut-sm), 100% 100%, 0 100%);
+  --tile: linear-gradient(135deg, #132024 0%, #0b1316 100%);
+  --tile-hover: linear-gradient(135deg, #1a2a2f 0%, #0e181b 100%);
+  --glass: rgba(6, 10, 12, 0.5);
+  --glass-hover: rgba(6, 10, 12, 0.36);
 }
 
-/* Remove outlines and dividing lines everywhere */
+/* No outlines or dividing lines anywhere */
 .navbar, .nav-mobile, .nav-mobile a,
 .footer, .footer-topband, .footer-bottom,
 .credibility-strip, .game-seo-section, .static-related-section, .faq-section,
@@ -3165,66 +3167,93 @@ p.hero-title { margin-top: 0; }
   border: 0 !important;
 }
 
-/* Soft panels */
+/* Square corners: no rounded cards */
 .game-feature, .game-info-card, .game-seo-card, .faq-item, .partner-card, .legal-card,
-.contact-item, .contact-response-card, .metric-card, .value-card, .about-stat {
-  background: var(--panel) !important;
-  border-radius: var(--panel-radius);
+.contact-item, .contact-info-minimal .contact-item, .contact-response-card, .contact-form,
+.metric-card, .value-card, .about-stat, .credibility-card, .game-card, .games-grid .game-card,
+.home-games-grid .game-card, .gallery-item, .game-badge, .game-card-badge, .platform-pill-row span,
+.cookie-banner-inner, .game-card-img, .game-card-img img, .contact-info-minimal .contact-icon {
+  border-radius: 0 !important;
 }
+
+/* Sport-cut tiles: one clipped corner, solid dark gradient, no frame */
+.game-feature, .game-info-card, .game-seo-card, .faq-item, .partner-card,
+.credibility-card, .metric-card, .value-card, .about-stat,
+.contact-item, .contact-info-minimal .contact-item, .contact-response-card {
+  clip-path: var(--cut-shape);
+  background: var(--tile) !important;
+  box-shadow: none !important;
+}
+.game-card { clip-path: var(--cut-shape) !important; background: var(--tile) !important; box-shadow: none !important; }
+.game-card::before { display: none !important; }
+.hero-feature { clip-path: var(--cut-shape); }
 .game-feature { padding: 1.4rem 1.6rem; transition: background 0.2s ease; }
-.game-feature:hover { background: var(--panel-hover) !important; }
+.game-feature:hover, .game-card:hover { background: var(--tile-hover) !important; }
 .game-info-card, .game-seo-card, .partner-card { padding: 2rem; }
 .game-info-row { padding: 0.65rem 0; }
-.game-info-card .store-buttons { margin-top: 0.5rem; }
-.legal-card { padding: clamp(1.5rem, 4vw, 2.75rem); }
+.legal-card { padding: clamp(1.5rem, 4vw, 2.75rem); background: var(--tile) !important; clip-path: var(--cut-shape); }
+.faq-item[open] { background: var(--tile-hover) !important; }
 
-/* Stats: separate tiles instead of a ruled grid */
+/* Headings in tiles use the display face, with a small amber corner mark on feature titles */
+.game-feature h3, .game-feature h4, .game-info-card h3 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.02em; }
+.game-feature h3, .game-feature h4 { font-size: 1.45rem; line-height: 1.1; margin-bottom: 0.4rem; }
+/* Small amber mark tucked under the clipped corner */
+.game-feature { position: relative; padding-right: 2.75rem; }
+.game-feature::after {
+  content: ''; position: absolute; top: calc(var(--cut) + 4px); right: 12px; width: 10px; height: 10px;
+  background: var(--amber); clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+/* Stats: separate cut tiles */
 .credibility-grid { background: transparent !important; gap: 1rem; }
-.credibility-card { background: var(--panel) !important; border-radius: var(--panel-radius); }
 
-/* Game cards and featured games: lift on hover, no frame */
-.game-card { background: var(--panel-strong) !important; border-radius: var(--panel-radius); overflow: hidden; box-shadow: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; }
-.game-card:hover { background: var(--panel-hover) !important; box-shadow: var(--soft-shadow); }
-.hero-feature { box-shadow: var(--soft-shadow); }
+/* Slanted tags, like a match-day flag */
+.game-badge, .game-card-badge, .platform-pill-row span {
+  clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
+  padding-left: 1.1rem !important; padding-right: 1.1rem !important;
+}
+.game-badge { background: rgba(0, 167, 186, 0.16) !important; }
+.platform-pill-row span { background: rgba(255, 255, 255, 0.08) !important; }
 
-/* Questions and answers: calm, borderless list */
-.faq-list { gap: 0.75rem; }
-.faq-item summary { padding: 1.25rem 1.5rem; }
-.faq-item p { padding: 0 1.5rem 1.4rem; }
-.faq-item[open] { background: var(--panel-strong) !important; }
+/* Glass over game art: the game's own artwork glows behind frosted panels */
+.game-art-band { position: relative; isolation: isolate; overflow: hidden; }
+.game-art-band::before {
+  content: ''; position: absolute; inset: -60px; z-index: -2;
+  background: var(--game-art) center / cover no-repeat;
+  filter: blur(42px) saturate(1.3); opacity: 0.55;
+}
+.game-art-band::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(8,13,15,0.5) 0%, rgba(8,13,15,0.78) 65%, #080d0f 100%);
+}
+.game-art-band .game-seo-section, .credibility-strip.game-art-band { background: transparent !important; }
+.game-art-band .game-feature, .game-art-band .game-info-card, .game-art-band .game-seo-card, .game-art-band .credibility-card {
+  background: var(--glass) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.2); backdrop-filter: blur(18px) saturate(1.2);
+}
+.game-art-band .game-feature:hover { background: var(--glass-hover) !important; }
 
-/* Gallery: rounded screenshots, no frame */
-.gallery-item { border-radius: 14px; }
-.gallery-btn, .social-link, .lightbox-close { background: var(--panel-hover) !important; }
-.gallery-btn:hover, .social-link:hover { background: rgba(243, 146, 0, 0.18) !important; color: var(--amber); }
-
-/* Tags and pills: soft fills */
-.game-badge { background: rgba(0, 167, 186, 0.14) !important; border-radius: 999px; }
-.platform-pill-row span { background: var(--panel-hover) !important; border-radius: 999px; }
+/* Gallery, social and close buttons: soft square fills */
+.gallery-btn, .social-link, .lightbox-close { background: rgba(255,255,255,0.07) !important; border-radius: 0 !important; }
+.gallery-btn:hover, .social-link:hover { background: rgba(243,146,0,0.18) !important; color: var(--amber); }
 
 /* Secondary buttons: soft fill instead of an outline */
-.btn-secondary { background: rgba(255, 255, 255, 0.08) !important; }
-.btn-secondary:hover { background: rgba(255, 255, 255, 0.14) !important; color: var(--amber); }
+.btn-secondary { background: rgba(255,255,255,0.08) !important; }
+.btn-secondary:hover { background: rgba(255,255,255,0.14) !important; color: var(--amber); }
 
-/* Hero stats and header: no rules */
+/* Header, cookie banner, footer: no rules, separated by shadow and space */
 .hero-stats { background: transparent; gap: 0.5rem 2rem; }
-.navbar.scrolled { box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.9); }
-.cookie-banner-inner { box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9); border-radius: 14px; }
-
-/* Footer: a slightly darker band separated by space */
+.navbar.scrolled { box-shadow: 0 10px 30px -20px rgba(0,0,0,0.9); }
+.cookie-banner-inner { box-shadow: 0 20px 50px -20px rgba(0,0,0,0.9); }
 .footer { background: #05090b; }
 .footer-bottom { margin-top: 2.5rem; }
-
-/* Mobile menu: spacing instead of dividing lines */
 .nav-mobile a { padding-top: 0.85rem; padding-bottom: 0.85rem; }
 
-/* Rounded corners everywhere so cards match the soft panels */
-.game-card, .games-grid .game-card, .home-games-grid .game-card,
-.contact-item, .contact-info-minimal .contact-item, .contact-response-card, .contact-form {
-  border-radius: var(--panel-radius) !important;
+/* Keyboard focus stays visible on cut cards (clip-path would hide the outline) */
+.game-card:focus-visible { clip-path: none !important; outline: 2px solid var(--amber); outline-offset: 3px; }
+
+/* Browsers without frosted glass get a solid panel instead */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .game-art-band .game-feature, .game-art-band .game-info-card, .game-art-band .game-seo-card, .game-art-band .credibility-card { background: rgba(8,13,15,0.82) !important; }
 }
-.contact-info-minimal .contact-item { background: var(--panel) !important; }
-.contact-info-minimal .contact-icon { border-radius: 12px !important; }
-.game-card-img, .game-card-img img { border-radius: 0 !important; }
-/* No coloured stub line on top of game cards */
-.game-card::before { display: none !important; }
+

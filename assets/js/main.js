@@ -811,6 +811,7 @@ function renderGamePage(gameId) {
       </div>
     </section>
 
+    <div class="game-art-band" style="--game-art: url('${g.heroImage.replace('.webp', '-mobile.webp')}')">
     <div class="game-description">
       <div class="game-desc-text">
         <h2>About ${g.name}</h2>
@@ -841,6 +842,7 @@ function renderGamePage(gameId) {
       </aside>
     </div>
     ${gameSeoSectionHTML(g)}
+    </div>
   `;
 }
 
