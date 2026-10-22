@@ -32,8 +32,8 @@ const GAMES = [
     ],
     platform: 'Android and iOS',
     genre2: 'Sports / Management',
-    size: '250 MB',
-    updated: '2024',
+    size: '266 MB (iOS)',
+    updated: '2026',
   },
   {
     id: 'super-goal',
@@ -69,8 +69,8 @@ const GAMES = [
     ],
     platform: 'Android and iOS',
     genre2: 'Sports / Casual',
-    size: '90 MB',
-    updated: '2024',
+    size: '313 MB (iOS)',
+    updated: '2026',
   },
   {
     id: 'soccer-legend',
@@ -104,8 +104,7 @@ const GAMES = [
     ],
     platform: 'Android and iOS',
     genre2: 'Sports / Puzzle',
-    size: '200 MB',
-    updated: '2024',
+    updated: '2026',
   },
   {
     id: 'soccer-league',
@@ -170,8 +169,7 @@ Join challenging competitive tournaments and win your place with both clubs and 
     ],
     platform: 'Android and iOS',
     genre2: 'Sports / Casual',
-    size: '80 MB',
-    updated: '2024',
+    updated: '2026',
   },
   {
     id: 'perfect-kick-2',
@@ -205,8 +203,8 @@ Join challenging competitive tournaments and win your place with both clubs and 
     ],
     platform: 'Android and iOS',
     genre2: 'Sports / Casual',
-    size: '120 MB',
-    updated: '2024',
+    size: '454 MB (iOS)',
+    updated: '2026',
   },
   {
     id: 'soccer-strike',
@@ -238,8 +236,8 @@ Join challenging competitive tournaments and win your place with both clubs and 
     ],
     platform: 'Android and iOS',
     genre2: 'Sports / Multiplayer',
-    size: '150 MB',
-    updated: '2024',
+    size: '272 MB (iOS)',
+    updated: '2026',
   },
 ];
 
