@@ -3135,3 +3135,96 @@ p.hero-title { margin-top: 0; }
 .faq-item summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
 .faq-item h3 { margin: 0; font-size: 1.05rem; font-weight: 600; line-height: 1.35; color: var(--text-primary); }
 .faq-item p { margin: 0; padding: 0 1.25rem 1.2rem; color: var(--text-secondary); line-height: 1.7; max-width: 70ch; }
+
+/* ===== CLEAN, PREMIUM LOOK: NO OUTLINES ===== */
+/* Boxes are soft panels instead of outlined frames; sections are separated by space, not lines */
+:root {
+  --panel: rgba(255, 255, 255, 0.035);
+  --panel-hover: rgba(255, 255, 255, 0.06);
+  --panel-strong: rgba(255, 255, 255, 0.05);
+  --panel-radius: 16px;
+  --soft-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.75);
+}
+
+/* Remove outlines and dividing lines everywhere */
+.navbar, .nav-mobile, .nav-mobile a,
+.footer, .footer-topband, .footer-bottom,
+.credibility-strip, .game-seo-section, .static-related-section, .faq-section,
+.credibility-grid, .credibility-card, .credibility-card:nth-child(n),
+.game-card, .game-card-meta, .hero-feature,
+.game-feature, .game-info-card, .game-info-card h3, .game-info-row,
+.game-seo-card, .faq-item, .partner-card, .legal-card,
+.gallery-item, .gallery-btn, .game-badge, .platform-pill-row span,
+.hero-stats, .stat-item, .stat-item:last-child,
+.social-link, .cookie-banner-inner, .lightbox-close,
+.contact-item, .contact-info-minimal .contact-item, .contact-response-card, .contact-form,
+.about-stat, .metric-card, .value-card, .news-card, .news-card-tag,
+.home-highlight-card, .home-pill, .home-spotlight-card, .home-spotlight-overlay, .premium-cta,
+.hero-carousel-main, .hero-carousel-btn, .hero-slide-chip, .hero-slide-content, .hero-thumb,
+.btn-secondary {
+  border: 0 !important;
+}
+
+/* Soft panels */
+.game-feature, .game-info-card, .game-seo-card, .faq-item, .partner-card, .legal-card,
+.contact-item, .contact-response-card, .metric-card, .value-card, .about-stat {
+  background: var(--panel) !important;
+  border-radius: var(--panel-radius);
+}
+.game-feature { padding: 1.4rem 1.6rem; transition: background 0.2s ease; }
+.game-feature:hover { background: var(--panel-hover) !important; }
+.game-info-card, .game-seo-card, .partner-card { padding: 2rem; }
+.game-info-row { padding: 0.65rem 0; }
+.game-info-card .store-buttons { margin-top: 0.5rem; }
+.legal-card { padding: clamp(1.5rem, 4vw, 2.75rem); }
+
+/* Stats: separate tiles instead of a ruled grid */
+.credibility-grid { background: transparent !important; gap: 1rem; }
+.credibility-card { background: var(--panel) !important; border-radius: var(--panel-radius); }
+
+/* Game cards and featured games: lift on hover, no frame */
+.game-card { background: var(--panel-strong) !important; border-radius: var(--panel-radius); overflow: hidden; box-shadow: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; }
+.game-card:hover { background: var(--panel-hover) !important; box-shadow: var(--soft-shadow); }
+.hero-feature { box-shadow: var(--soft-shadow); }
+
+/* Questions and answers: calm, borderless list */
+.faq-list { gap: 0.75rem; }
+.faq-item summary { padding: 1.25rem 1.5rem; }
+.faq-item p { padding: 0 1.5rem 1.4rem; }
+.faq-item[open] { background: var(--panel-strong) !important; }
+
+/* Gallery: rounded screenshots, no frame */
+.gallery-item { border-radius: 14px; }
+.gallery-btn, .social-link, .lightbox-close { background: var(--panel-hover) !important; }
+.gallery-btn:hover, .social-link:hover { background: rgba(243, 146, 0, 0.18) !important; color: var(--amber); }
+
+/* Tags and pills: soft fills */
+.game-badge { background: rgba(0, 167, 186, 0.14) !important; border-radius: 999px; }
+.platform-pill-row span { background: var(--panel-hover) !important; border-radius: 999px; }
+
+/* Secondary buttons: soft fill instead of an outline */
+.btn-secondary { background: rgba(255, 255, 255, 0.08) !important; }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.14) !important; color: var(--amber); }
+
+/* Hero stats and header: no rules */
+.hero-stats { background: transparent; gap: 0.5rem 2rem; }
+.navbar.scrolled { box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.9); }
+.cookie-banner-inner { box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9); border-radius: 14px; }
+
+/* Footer: a slightly darker band separated by space */
+.footer { background: #05090b; }
+.footer-bottom { margin-top: 2.5rem; }
+
+/* Mobile menu: spacing instead of dividing lines */
+.nav-mobile a { padding-top: 0.85rem; padding-bottom: 0.85rem; }
+
+/* Rounded corners everywhere so cards match the soft panels */
+.game-card, .games-grid .game-card, .home-games-grid .game-card,
+.contact-item, .contact-info-minimal .contact-item, .contact-response-card, .contact-form {
+  border-radius: var(--panel-radius) !important;
+}
+.contact-info-minimal .contact-item { background: var(--panel) !important; }
+.contact-info-minimal .contact-icon { border-radius: 12px !important; }
+.game-card-img, .game-card-img img { border-radius: 0 !important; }
+/* No coloured stub line on top of game cards */
+.game-card::before { display: none !important; }
