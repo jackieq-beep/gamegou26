@@ -101,7 +101,7 @@ def text_blocks(soup):
                 continue
             if ch.name in SKIP_TAGS or ch.name == "time":
                 continue
-            if set(ch.get("class") or []) & {"lang-switch", "footer-lang"}:
+            if set(ch.get("class") or []) & {"lang-switch", "footer-lang", "footer-lang-switch"}:
                 continue
             own = any(isinstance(c, NavigableString) and not isinstance(c, Comment) and c.strip() for c in ch.children)
             # a block that only wraps a game name is never translated
@@ -135,7 +135,7 @@ def collect(page):
     for el in text_blocks(soup):
         keys.append(norm(el.decode_contents()))
     for el in soup.body.find_all(True):
-        if el.find_parent(class_=["lang-switch", "footer-lang"]) or "lang-switch" in (el.get("class") or []): continue
+        if el.find_parent(class_=["lang-switch", "footer-lang", "footer-lang-switch"]) or "lang-switch" in (el.get("class") or []): continue
         for a in TEXT_ATTRS:
             if el.get(a): keys.append(norm(el[a]))
     return [brace(k) for k in keys if needs_translation(k)]
@@ -158,11 +158,16 @@ def switcher(folder, page):
     return (f'<details class="lang-switch"><summary aria-label="{LANG_LABEL[folder]}: {cur[2]}">{GLOBE}<span>{short(cur[1])}</span></summary>'
             f'<ul role="list">{"".join(items)}</ul></details>\n')
 
-def footer_col(folder, page):
+CHEV = '<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M2 4l4 4 4-4"/></svg>'
+
+def footer_lang(folder, page):
+    """Language button in the footer bar; the list opens upwards (no script needed)."""
     me = f"{folder}/{page}" if folder else page
+    cur = next(l for l in ALL if l[0] == folder)
     items = "".join(f'<li><a href="{rel(me, page_url(f, page))}" hreflang="{code}" lang="{code}"{" aria-current=\"page\"" if f == folder else ""}>{native}</a></li>'
                     for f, code, native, _ in ALL)
-    return f'<div class="footer-col footer-lang">\n<h4>{LANG_LABEL[folder]}</h4>\n<ul role="list">{items}</ul>\n</div>\n'
+    return (f'<details class="footer-lang-switch"><summary aria-label="{LANG_LABEL[folder]}: {cur[2]}">{GLOBE}<span>{cur[2]}</span>{CHEV}</summary>'
+            f'<ul role="list">{items}</ul></details>\n')
 
 def head_links(page):
     out = [f'<link rel="alternate" hreflang="{code}" href="{SITE}{page_url(f, page)}"/>' for f, code, _, _ in ALL]
@@ -175,7 +180,8 @@ def add_language_links(html, folder, page):
     html = re.sub(r'<details class="lang-switch">.*?</details>\n?', "", html, flags=re.S)
     html = re.sub(r'(<button[^>]*id="hamburger"[^>]*>)', lambda m: switcher(folder, page) + m.group(1), html, count=1)
     html = re.sub(r'<div class="footer-col footer-lang">.*?</div>\n', "", html, flags=re.S)
-    html = re.sub(r'</div>(\s*)<div class="footer-bottom">', lambda m: footer_col(folder, page) + "</div>" + m.group(1) + '<div class="footer-bottom">', html, count=1)
+    html = re.sub(r'<details class="footer-lang-switch">.*?</details>\n?', "", html, flags=re.S)
+    html = re.sub(r'(<div class="footer-bottom">\s*)', lambda m: m.group(1) + footer_lang(folder, page), html, count=1)
     # og:locale
     html = re.sub(r'<meta[^>]*property="og:locale(?::alternate)?"[^>]*>\n?', "", html)
     cur = next(l for l in ALL if l[0] == folder)
@@ -300,7 +306,7 @@ def translate_page(page, lang, T, missing):
             for node in list(BeautifulSoup(t, "html.parser").contents):
                 el.append(node)
     for el in soup.body.find_all(True):
-        if el.find_parent(class_=["lang-switch", "footer-lang"]) or "lang-switch" in (el.get("class") or []): continue
+        if el.find_parent(class_=["lang-switch", "footer-lang", "footer-lang-switch"]) or "lang-switch" in (el.get("class") or []): continue
         for a in TEXT_ATTRS:
             if el.get(a):
                 t = tr(el[a])
