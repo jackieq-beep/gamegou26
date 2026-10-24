@@ -3358,43 +3358,64 @@ p.hero-title { margin-top: 0; }
   .credibility-card:last-child { border-right: 0; }
 }
 
-/* Updates */
-.updates-list {
-  list-style: none;
-  margin: 2rem 0 0;
-  padding: 0;
+/* What's New */
+.update-feature {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  margin-top: 2rem;
+  background: rgba(255,255,255,0.04);
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
 }
+.update-feature-art { display: block; position: relative; min-height: 360px; overflow: hidden; background: #0d1417; }
+.update-feature-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; }
+.update-feature-body { display: flex; flex-direction: column; justify-content: center; gap: 0.9rem; min-width: 0; padding: clamp(1.25rem, 3vw, 2.75rem); }
+.update-feature-body h3 { margin: 0; font-family: var(--font-display); font-size: clamp(1.9rem, 3.4vw, 2.9rem); line-height: 1.02; text-transform: uppercase; color: #ffffff; text-wrap: balance; }
+.update-game { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.update-game a { color: var(--amber); text-decoration: none; }
+.update-game a:hover { color: #ffffff; }
+.updates-list { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
 .update-row {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
-  column-gap: 1.1rem;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 1.1rem;
   align-items: start;
   padding: 1rem;
   background: rgba(255,255,255,0.04);
   clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
 }
-.update-thumb { grid-row: 1 / span 2; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #0d1417; }
+.update-thumb { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #0d1417; }
 .update-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.update-body h3 { font-size: 1.2rem; margin: 0 0 0.35rem; line-height: 1.2; }
-.update-body h3 a { color: #ffffff; text-decoration: none; }
-.update-body h3 a:hover { color: var(--amber); }
-.update-meta { font-size: 13px; color: var(--text-secondary); margin: 0 0 0.15rem; }
-.update-meta time, .update-version { white-space: nowrap; }
-.update-store { color: var(--amber); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; margin-inline-end: 0.35rem; }
-.update-notes { list-style: none; margin: 0.6rem 0 0; padding: 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+.update-body { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+.update-body h3 { margin: 0; font-size: 1.25rem; line-height: 1.15; color: #ffffff; }
+.update-meta { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font-size: 13px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.update-meta li { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+.update-icon { width: 14px; height: 14px; flex: none; color: #ffffff; }
+.update-ver { padding: 1px 6px; font-size: 12px; font-weight: 700; color: #ffffff; background: rgba(255,255,255,0.08); }
+.update-notes { list-style: none; margin: 0; padding: 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
 .update-notes li { position: relative; padding-inline-start: 1rem; }
 .update-notes li + li { margin-top: 0.2rem; }
 .update-notes li::before { content: ''; position: absolute; inset-inline-start: 0; top: 0.62em; width: 6px; height: 6px; background: var(--amber); }
-.update-source { font-size: 13px; color: var(--text-secondary); margin-top: 1rem; }
-.game-update-card .update-meta { margin-bottom: 0.25rem; }
-.game-update-card ul { margin-top: 0.9rem; }
-@media (max-width: 900px) { .updates-list { grid-template-columns: 1fr; } }
+.update-get { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.25rem; }
+.update-get-label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-secondary); }
+.update-store-link { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 40px; padding: 0 0.85rem; font-size: 13px; font-weight: 600; color: #ffffff; text-decoration: none; background: rgba(255,255,255,0.08); transition: background 0.2s ease, color 0.2s ease; }
+.update-store-link:hover { background: #ffffff; color: #080D0F; }
+.update-store-link:hover .update-icon { color: #080D0F; }
+.update-store-link:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.game-update-card h2 { text-wrap: balance; }
+.game-update-card .update-meta { margin: 0.4rem 0 0; display: flex; gap: 0.35rem 1rem; }
+.game-update-card .update-meta li { padding: 0; line-height: 1.4; }
+.game-update-card .update-meta li::before { display: none; }
+.game-update-card .update-notes { margin-top: 1rem; }
+.game-update-card .update-get { margin-top: 1.25rem; }
+@media (max-width: 900px) {
+  .update-feature { grid-template-columns: 1fr; }
+  .update-feature-art { min-height: 0; aspect-ratio: 16 / 10; }
+  .updates-list { grid-template-columns: 1fr; }
+}
 @media (max-width: 560px) {
-  .update-row { grid-template-columns: 96px minmax(0, 1fr); column-gap: 0.85rem; padding: 0.85rem; }
+  .update-row { grid-template-columns: 88px minmax(0, 1fr); gap: 0.85rem; padding: 0.85rem; }
+}
   .update-thumb { grid-row: 1; }
   .update-notes { grid-column: 1 / -1; }
 }
@@ -3455,7 +3476,6 @@ p.hero-title { margin-top: 0; }
 :lang(zh-Hans) body { font-family: var(--font-body), 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; }
 :lang(ja) body { font-family: var(--font-body), 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif; }
 [dir="rtl"] .hero-players { right: auto; left: 0; transform: scaleX(-1); }
-.update-version::before { content: "· "; }
 /* the hero font is Latin-only: give Arabic, Chinese and Japanese room to breathe (main.min.css sets these with !important) */
 html:lang(ar) .hero-content .hero-title { line-height: 1.25 !important; font-size: clamp(3.4rem, 15vw, 8rem) !important; }
 html:lang(ja) .hero-content .hero-title, html:lang(zh-Hans) .hero-content .hero-title { line-height: 1.1 !important; font-size: clamp(2.7rem, 11.5vw, 6.8rem) !important; }

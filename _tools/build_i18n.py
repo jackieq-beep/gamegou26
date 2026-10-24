@@ -185,22 +185,20 @@ def add_language_links(html, folder, page):
 
 
 # ---------- dates ----------
-MONTHS = {
-    "es": "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre",
-    "pt": "janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro",
-    "fr": "janvier février mars avril mai juin juillet août septembre octobre novembre décembre",
-    "de": "Januar Februar März April Mai Juni Juli August September Oktober November Dezember",
+MONTHS = {  # short month names for update dates
+    "es": "ene feb mar abr may jun jul ago sept oct nov dic",
+    "pt": "jan fev mar abr mai jun jul ago set out nov dez",
+    "fr": "janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.",
+    "de": "Jan. Feb. März Apr. Mai Juni Juli Aug. Sept. Okt. Nov. Dez.",
     "ar": "يناير فبراير مارس أبريل مايو يونيو يوليو أغسطس سبتمبر أكتوبر نوفمبر ديسمبر",
-    "tr": "Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık",
+    "tr": "Oca Şub Mar Nis May Haz Tem Ağu Eyl Eki Kas Ara",
 }
 def fmt_date(iso, code):
     y, m, d = (int(x) for x in iso[:10].split("-"))
     if code in ("zh-Hans", "ja"): return f"{y}年{m}月{d}日"
-    names = MONTHS[code].split()
-    if code == "es": return f"{d} de {names[m-1]} de {y}"
-    if code == "pt": return f"{d} de {names[m-1]} de {y}"
-    if code == "de": return f"{d}. {names[m-1]} {y}"
-    return f"{d} {names[m-1]} {y}"
+    name = MONTHS[code].split()[m - 1]
+    if code == "de": return f"{d}. {name} {y}"
+    return f"{d} {name} {y}"
 
 
 # ---------- translating a page ----------
