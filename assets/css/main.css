@@ -3480,3 +3480,15 @@ p.hero-title { margin-top: 0; }
 html:lang(ar) .hero-content .hero-title { line-height: 1.25 !important; font-size: clamp(3.4rem, 15vw, 8rem) !important; }
 html:lang(ja) .hero-content .hero-title, html:lang(zh-Hans) .hero-content .hero-title { line-height: 1.1 !important; font-size: clamp(2.7rem, 11.5vw, 6.8rem) !important; }
 [dir="rtl"] .stat-number, [dir="rtl"] .credibility-card strong { direction: ltr; unicode-bidi: isolate; text-align: right; }
+/* With Updates and the language picker the full menu needs more room: use the menu button below 1100px */
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .lang-switch { margin-inline-start: auto; margin-inline-end: 0.5rem; }
+}
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1260px) {
+  html:lang(tr) .nav-links { display: none; }
+  html:lang(tr) .nav-hamburger { display: flex; }
+  html:lang(tr) .lang-switch { margin-inline-start: auto; margin-inline-end: 0.5rem; }
+}
