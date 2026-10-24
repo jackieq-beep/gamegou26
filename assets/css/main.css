@@ -3297,3 +3297,166 @@ p.hero-title { margin-top: 0; }
   background: none !important; border: 0 !important; padding: 0 !important; margin: 0 !important;
   clip-path: none !important; width: auto !important; height: auto !important;
 }
+
+/* ===== Round 6 (2026-10-24): store badges, hero players, updates, footer, languages ===== */
+
+/* Store badges: the real Apple and Google Play marks on a square sport-cut tile */
+.store-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 56px;
+  padding: 0.5rem 1.35rem 0.5rem 1rem;
+  background: #ffffff;
+  color: #080D0F;
+  text-decoration: none;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.store-badge:hover { background: #e4e9eb; color: #080D0F; transform: translateY(-1px); }
+.store-badge:focus-visible { clip-path: none; outline: 2px solid var(--amber); outline-offset: 3px; }
+.store-badge-icon { width: 26px; height: 26px; flex: none; }
+.store-badge-text { display: flex; flex-direction: column; line-height: 1.1; text-align: start; }
+.store-badge-text small { font-size: 12px; font-weight: 600; letter-spacing: 0.01em; }
+.store-badge-text strong { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
+.game-info-card .store-buttons { flex-direction: column; }
+.game-info-card .store-badge { width: 100%; flex: none; }
+@media (max-width: 768px) {
+  .store-buttons { flex-direction: row; }
+  .store-badge { flex: 1 1 150px; padding-inline-end: 0.9rem; }
+}
+
+/* Hero: two players beside the title on phones and tablets (desktop shows the game showcase there) */
+.hero-players { display: none; }
+.hero-stats { grid-template-columns: minmax(0, 1fr); width: min(100%, 300px); }
+@media (max-width: 1120px) {
+  .hero-players {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 5.25rem;
+    right: 0;
+    width: min(66vw, 470px);
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(180deg, transparent 0%, #000 14%, #000 58%, transparent 98%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(180deg, transparent 0%, #000 14%, #000 58%, transparent 98%);
+    mask-composite: intersect;
+  }
+  .hero-players img { display: block; width: 100%; height: auto; filter: brightness(0.82); }
+  .sharp-hero::before { opacity: 0.4; }
+}
+@media (max-width: 768px) {
+  .hero-stats { width: 100%; }
+}
+
+/* Credibility strip now has three items */
+@media (min-width: 769px) {
+  .credibility-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .credibility-card, .credibility-card:nth-child(2) { border-right: 1px solid var(--border); border-bottom: 0; }
+  .credibility-card:last-child { border-right: 0; }
+}
+
+/* Updates */
+.updates-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+.update-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: 1.1rem;
+  align-items: start;
+  padding: 1rem;
+  background: rgba(255,255,255,0.04);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+.update-thumb { grid-row: 1 / span 2; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #0d1417; }
+.update-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.update-body h3 { font-size: 1.2rem; margin: 0 0 0.35rem; line-height: 1.2; }
+.update-body h3 a { color: #ffffff; text-decoration: none; }
+.update-body h3 a:hover { color: var(--amber); }
+.update-meta { font-size: 13px; color: var(--text-secondary); margin: 0 0 0.15rem; }
+.update-meta time, .update-version { white-space: nowrap; }
+.update-store { color: var(--amber); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; margin-inline-end: 0.35rem; }
+.update-notes { list-style: none; margin: 0.6rem 0 0; padding: 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+.update-notes li { position: relative; padding-inline-start: 1rem; }
+.update-notes li + li { margin-top: 0.2rem; }
+.update-notes li::before { content: ''; position: absolute; inset-inline-start: 0; top: 0.62em; width: 6px; height: 6px; background: var(--amber); }
+.update-source { font-size: 13px; color: var(--text-secondary); margin-top: 1rem; }
+.game-update-card .update-meta { margin-bottom: 0.25rem; }
+.game-update-card ul { margin-top: 0.9rem; }
+@media (max-width: 900px) { .updates-list { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .update-row { grid-template-columns: 96px minmax(0, 1fr); column-gap: 0.85rem; padding: 0.85rem; }
+  .update-thumb { grid-row: 1; }
+  .update-notes { grid-column: 1 / -1; }
+}
+
+/* Footer: columns side by side on phones, readable copyright */
+.footer-bottom p { color: var(--text-secondary); font-size: 13px; }
+.footer-legal a { color: var(--text-secondary); font-size: 13px; }
+.footer-col ul li a, .footer-col span { overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+  .footer-brand, .footer-grid > .footer-col:nth-child(4), .footer-lang { grid-column: 1 / -1; }
+  .footer-lang ul { flex-direction: row; flex-wrap: wrap; gap: 0.6rem 1.25rem; }
+  .footer-bottom { flex-direction: row; flex-wrap: wrap; justify-content: space-between; text-align: start; gap: 0.75rem 1.5rem; }
+}
+
+/* Language picker */
+.lang-switch { position: relative; margin-inline-start: 1rem; }
+.lang-switch summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0 0.5rem;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  user-select: none;
+}
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary svg { width: 18px; height: 18px; }
+.lang-switch summary:hover, .lang-switch[open] summary { color: #ffffff; }
+.lang-switch summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.lang-switch ul {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + 8px);
+  min-width: 190px;
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  background: #0b1114;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+  z-index: 1100;
+}
+.lang-switch li a { display: block; padding: 0.6rem 1.1rem; font-size: 15px; color: var(--text-secondary); text-decoration: none; }
+.lang-switch li a:hover { color: #ffffff; background: rgba(255,255,255,0.06); }
+.lang-switch li a[aria-current="page"] { color: var(--amber); }
+@media (max-width: 768px) {
+  .lang-switch { margin-inline-start: auto; margin-inline-end: 0.5rem; }
+}
+
+/* Scripts that must not be letter-spaced or forced to Latin display fonts */
+:lang(ar) body, :lang(ar) h1, :lang(ar) h2, :lang(ar) h3, :lang(ar) .hero-title, :lang(ar) .section-title { font-family: 'Segoe UI', Tahoma, 'Noto Sans Arabic', 'Geeza Pro', sans-serif; }
+:lang(ar) *, :lang(zh-Hans) *, :lang(ja) * { letter-spacing: 0 !important; }
+:lang(zh-Hans) body { font-family: var(--font-body), 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; }
+:lang(ja) body { font-family: var(--font-body), 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif; }
+[dir="rtl"] .hero-players { right: auto; left: 0; transform: scaleX(-1); }
+.update-version::before { content: "· "; }
+/* the hero font is Latin-only: give Arabic, Chinese and Japanese room to breathe (main.min.css sets these with !important) */
+html:lang(ar) .hero-content .hero-title { line-height: 1.25 !important; font-size: clamp(3.4rem, 15vw, 8rem) !important; }
+html:lang(ja) .hero-content .hero-title, html:lang(zh-Hans) .hero-content .hero-title { line-height: 1.1 !important; font-size: clamp(2.7rem, 11.5vw, 6.8rem) !important; }
+[dir="rtl"] .stat-number, [dir="rtl"] .credibility-card strong { direction: ltr; unicode-bidi: isolate; text-align: right; }

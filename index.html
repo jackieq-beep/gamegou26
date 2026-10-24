@@ -14,8 +14,27 @@
 <meta content="index, follow, max-image-preview:large" name="robots"/>
 <meta content="#05272d" name="theme-color"/>
 <link href="https://welcome.gamegou.com/" rel="canonical"/>
+<link rel="alternate" hreflang="en" href="https://welcome.gamegou.com/"/>
+<link rel="alternate" hreflang="es" href="https://welcome.gamegou.com/es/"/>
+<link rel="alternate" hreflang="pt" href="https://welcome.gamegou.com/pt/"/>
+<link rel="alternate" hreflang="fr" href="https://welcome.gamegou.com/fr/"/>
+<link rel="alternate" hreflang="de" href="https://welcome.gamegou.com/de/"/>
+<link rel="alternate" hreflang="ar" href="https://welcome.gamegou.com/ar/"/>
+<link rel="alternate" hreflang="tr" href="https://welcome.gamegou.com/tr/"/>
+<link rel="alternate" hreflang="zh-Hans" href="https://welcome.gamegou.com/zh/"/>
+<link rel="alternate" hreflang="ja" href="https://welcome.gamegou.com/ja/"/>
+<link rel="alternate" hreflang="x-default" href="https://welcome.gamegou.com/"/>
 <!-- Open Graph / Facebook -->
 <meta content="website" property="og:type"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:locale:alternate" content="es_ES"/>
+<meta property="og:locale:alternate" content="pt_BR"/>
+<meta property="og:locale:alternate" content="fr_FR"/>
+<meta property="og:locale:alternate" content="de_DE"/>
+<meta property="og:locale:alternate" content="ar_AR"/>
+<meta property="og:locale:alternate" content="tr_TR"/>
+<meta property="og:locale:alternate" content="zh_CN"/>
+<meta property="og:locale:alternate" content="ja_JP"/>
 <meta content="https://welcome.gamegou.com/" property="og:url"/>
 <meta content="Mobile Football &amp; Soccer Games for Android &amp; iOS | Gamegou" property="og:title"/>
 <meta content="Free mobile football games from Gamegou, downloaded 300M+ times. Play Soccer Strike, Super Goal, Top Football Manager and Perfect Kick on Android &amp; iOS." property="og:description"/>
@@ -39,8 +58,8 @@
 <link as="image" fetchpriority="high" href="assets/images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art-mobile.webp" media="(max-width: 768px)" rel="preload"/>
 <link as="image" fetchpriority="high" href="assets/images/games/soccer-strike/soccer-strike-gamegou-mobile-soccer-game-key-art.webp" media="(min-width: 769px)" rel="preload"/>
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/main.css?v=6" rel="stylesheet"/>
-<link href="assets/css/main.min.css?v=6" rel="stylesheet"/>
+<link href="assets/css/main.css?v=7" rel="stylesheet"/>
+<link href="assets/css/main.min.css?v=7" rel="stylesheet"/>
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
@@ -92,11 +111,13 @@
 <ul class="nav-links" role="list">
 <li><a aria-current="page" class="active" data-page="home" href="index.html">Home</a></li>
 <li><a data-page="games" href="games/">Games</a></li>
+<li><a data-page="updates" href="index.html#updates">Updates</a></li>
 <li><a data-page="about" href="index.html#about">About</a></li>
 
 <li><a data-page="partners" href="index.html#partners">Partners</a></li>
 <li><a class="nav-cta" data-page="contact" href="index.html#contact">Contact Us</a></li>
 </ul>
+<details class="lang-switch"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm-9-9h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg><span>EN</span></summary><ul role="list"><li><a href="./" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="es/" hreflang="es" lang="es">Español</a></li><li><a href="pt/" hreflang="pt" lang="pt">Português</a></li><li><a href="fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="tr/" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="ja/" hreflang="ja" lang="ja">日本語</a></li></ul></details>
 <button aria-expanded="false" aria-label="Toggle mobile menu" class="nav-hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
@@ -104,6 +125,7 @@
 <nav aria-label="Mobile navigation" class="nav-mobile" id="mobile-nav">
 <a data-page="home" href="index.html">Home</a>
 <a data-page="games" href="games/">Games</a>
+<a data-page="updates" href="index.html#updates">Updates</a>
 <a data-page="about" href="index.html#about">About</a>
 
 <a data-page="partners" href="index.html#partners">Partners</a>
@@ -116,6 +138,7 @@
 <section aria-label="Gamegou hero" class="hero sharp-hero">
 <div aria-hidden="true" class="hero-bg"></div>
 <div aria-hidden="true" class="hero-angle"></div>
+<picture class="hero-players" aria-hidden="true"><source media="(min-width: 1121px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img alt="" src="assets/images/games/soccer-legend/soccer-legend-gamegou-hero-players-small.webp" srcset="assets/images/games/soccer-legend/soccer-legend-gamegou-hero-players-small.webp 480w, assets/images/games/soccer-legend/soccer-legend-gamegou-hero-players.webp 810w" sizes="(max-width: 768px) 64vw, 50vw" width="810" height="920" fetchpriority="high" decoding="async"></picture>
 <div class="hero-content">
 <div class="hero-left">
 <h1 class="hero-eyebrow">Gamegou Mobile Football Games</h1>
@@ -130,14 +153,6 @@
 <div class="stat-number">300M+</div>
 <div class="stat-label">Portfolio Downloads</div>
 </div>
-<div class="stat-item">
-<div class="stat-number">7</div>
-<div class="stat-label">Football Game Experiences</div>
-</div>
-<div class="stat-item">
-<div class="stat-number">Global</div>
-<div class="stat-label">Mobile Audience</div>
-</div>
 </div>
 </div>
 <div aria-label="Featured Gamegou games" class="hero-visual" id="hero-cards">
@@ -146,7 +161,6 @@
         <picture class="img-fill-pic"><source media="(min-width: 1121px)" srcset="assets/images/games/super-goal/super-goal-gamegou-card-tall.webp"><img class="img-fill" aria-hidden="true" alt="" src="assets/images/games/super-goal/super-goal-gamegou-card.webp"></picture>
         <picture class="img-main-pic"><source media="(min-width: 1121px)" srcset="assets/images/games/super-goal/super-goal-gamegou-card-tall.webp"><img src="assets/images/games/super-goal/super-goal-gamegou-card.webp" srcset="assets/images/games/super-goal/super-goal-gamegou-card-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-card.webp 1766w" sizes="(max-width: 768px) 92vw, 55vw" alt="Super Goal gameplay artwork" loading="eager" width="1100" height="620"></picture>
         <div class="hero-feature-copy">
-          <span class="hero-feature-kicker">Featured</span>
           <h3><span class="nowrap">Super Goal</span></h3>
           <p>Draw Your Path to Victory</p>
         </div>
@@ -157,7 +171,6 @@
             <img class="img-fill" aria-hidden="true" alt="" src="assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp" srcset="assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp 540w, assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp 824w" sizes="(max-width: 768px) 92vw, 400px" loading="lazy">
             <img src="assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp" srcset="assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp 540w, assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp 824w" sizes="(max-width: 768px) 92vw, 400px" alt="Soccer Strike gameplay artwork" loading="lazy" width="600" height="338">
             <div class="hero-feature-copy">
-              <span class="hero-feature-kicker">Multiplayer</span>
               <h3><span class="nowrap">Soccer Strike</span></h3>
             </div>
           </a>
@@ -166,7 +179,6 @@
             <img class="img-fill" aria-hidden="true" alt="" src="assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp" srcset="assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp 1478w" sizes="(max-width: 768px) 92vw, 400px" loading="lazy">
             <img src="assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp" srcset="assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp 1478w" sizes="(max-width: 768px) 92vw, 400px" alt="Top Football Manager gameplay artwork" loading="lazy" width="600" height="338">
             <div class="hero-feature-copy">
-              <span class="hero-feature-kicker">Licensed Jerseys</span>
               <h3><span class="nowrap">Top Football Manager</span></h3>
             </div>
           </a>
@@ -193,10 +205,6 @@
 <strong>Google Play Best of 2015</strong>
 <span><span class="nowrap">Perfect Kick</span> recognition as a breakout mobile football game</span>
 </article>
-<article class="credibility-card" role="listitem">
-<strong>Global mobile audience</strong>
-<span>football experiences built for Android and iOS players</span>
-</article>
 </div>
 </div>
 </section>
@@ -215,7 +223,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp" srcset="assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp 1478w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp" srcset="assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp 1478w" alt="Top Football Manager gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Licensed Jerseys</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -234,7 +241,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/super-goal/super-goal-gamegou-card.webp" srcset="assets/images/games/super-goal/super-goal-gamegou-card-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-card.webp 1766w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/super-goal/super-goal-gamegou-card.webp" srcset="assets/images/games/super-goal/super-goal-gamegou-card-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-card.webp 1766w" alt="Super Goal gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Most Downloaded</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -253,7 +259,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp" srcset="assets/images/games/soccer-legend/soccer-legend-gamegou-card-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp 1690w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp" srcset="assets/images/games/soccer-legend/soccer-legend-gamegou-card-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp 1690w" alt="Soccer Legend gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Puzzle Football</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -272,7 +277,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp" srcset="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp 1280w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp" srcset="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp 1280w" alt="Soccer League gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Real Time PvP</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -291,7 +295,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp" srcset="assets/images/games/perfect-kick/perfect-kick-gamegou-card-mobile.webp 540w, assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp 675w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp" srcset="assets/images/games/perfect-kick/perfect-kick-gamegou-card-mobile.webp 540w, assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp 675w" alt="Perfect Kick gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Award Winner</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -310,7 +313,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/perfect-kick-2/perfect-kick-2-card.webp" srcset="assets/images/games/perfect-kick-2/perfect-kick-2-card-mobile.webp 540w, assets/images/games/perfect-kick-2/perfect-kick-2-card.webp 874w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/perfect-kick-2/perfect-kick-2-card.webp" srcset="assets/images/games/perfect-kick-2/perfect-kick-2-card-mobile.webp 540w, assets/images/games/perfect-kick-2/perfect-kick-2-card.webp 874w" alt="Perfect Kick 2 gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Fan Favourite</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -329,7 +331,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp" srcset="assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp 540w, assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp 824w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp" srcset="assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp 540w, assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp 824w" alt="Soccer Strike gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Multiplayer</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -346,6 +347,22 @@
 </div>
 </div>
 </section>
+<section aria-labelledby="updates-heading" class="section updates-section" id="updates">
+<div class="container">
+<div class="section-label">Updates</div>
+<h2 class="section-title" id="updates-heading">Latest game <span>updates</span></h2>
+<p class="section-desc">What changed in each game's most recent version, from the App Store and Google Play release notes (checked 24 October 2026).</p>
+<ol class="updates-list" role="list">
+<li class="update-row"><a class="update-thumb" href="games/super-goal/#latest-update" tabindex="-1" aria-hidden="true"><img alt="" src="assets/images/games/super-goal/super-goal-gamegou-card-mobile.webp" loading="lazy" decoding="async" width="600" height="338"></a><div class="update-body"><h3><a href="games/super-goal/#latest-update"><span class="nowrap">Super Goal</span></a></h3><p class="update-meta"><span class="update-store">Google Play</span> <time datetime="2026-10-22">22 October 2026</time></p><p class="update-meta"><span class="update-store">App Store</span> <time datetime="2026-09-15">15 September 2026</time> <span class="update-version">version 1.7.3</span></p></div><ul class="update-notes"><li>New achievements.</li><li>Bug fixes and improvements.</li></ul></li>
+<li class="update-row"><a class="update-thumb" href="games/soccer-legend/#latest-update" tabindex="-1" aria-hidden="true"><img alt="" src="assets/images/games/soccer-legend/soccer-legend-gamegou-card-mobile.webp" loading="lazy" decoding="async" width="600" height="338"></a><div class="update-body"><h3><a href="games/soccer-legend/#latest-update"><span class="nowrap">Soccer Legend</span></a></h3><p class="update-meta"><span class="update-store">Google Play</span> <time datetime="2026-10-22">22 October 2026</time></p></div><ul class="update-notes"><li>Halloween update with 50 new levels.</li><li>New Harvest outfits.</li><li>Bug fixes and improvements.</li></ul></li>
+<li class="update-row"><a class="update-thumb" href="games/soccer-strike/#latest-update" tabindex="-1" aria-hidden="true"><img alt="" src="assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp" loading="lazy" decoding="async" width="600" height="338"></a><div class="update-body"><h3><a href="games/soccer-strike/#latest-update"><span class="nowrap">Soccer Strike</span></a></h3><p class="update-meta"><span class="update-store">App Store</span> <time datetime="2026-08-31">31 August 2026</time> <span class="update-version">version 1.3.16</span></p><p class="update-meta"><span class="update-store">Google Play</span> <time datetime="2026-08-21">21 August 2026</time></p></div><ul class="update-notes"><li>Monthly Card and Level Packs added.</li><li>Bug fixes and better stability.</li></ul></li>
+<li class="update-row"><a class="update-thumb" href="games/top-football-manager/#latest-update" tabindex="-1" aria-hidden="true"><img alt="" src="assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp" loading="lazy" decoding="async" width="600" height="338"></a><div class="update-body"><h3><a href="games/top-football-manager/#latest-update"><span class="nowrap">Top Football Manager</span></a></h3><p class="update-meta"><span class="update-store">App Store</span> <time datetime="2026-08-28">28 August 2026</time> <span class="update-version">version 3.1.17</span></p><p class="update-meta"><span class="update-store">Google Play</span> <time datetime="2026-08-04">4 August 2026</time></p></div><ul class="update-notes"><li>Fixed a payment issue with the Emergency Reinforcement bundle.</li><li>New Triple Crown season event.</li><li>New Emergency Signing and Emergency Reinforcement bundles.</li><li>Teamwork for players from the same country or region now works differently.</li><li>Interface improvements and bug fixes.</li></ul></li>
+<li class="update-row"><a class="update-thumb" href="games/perfect-kick/#latest-update" tabindex="-1" aria-hidden="true"><img alt="" src="assets/images/games/perfect-kick/perfect-kick-gamegou-card-mobile.webp" loading="lazy" decoding="async" width="600" height="338"></a><div class="update-body"><h3><a href="games/perfect-kick/#latest-update"><span class="nowrap">Perfect Kick</span></a></h3><p class="update-meta"><span class="update-store">Google Play</span> <time datetime="2026-08-26">26 August 2026</time></p></div><ul class="update-notes"><li>Bug fixes.</li></ul></li>
+<li class="update-row"><a class="update-thumb" href="games/perfect-kick-2/#latest-update" tabindex="-1" aria-hidden="true"><img alt="" src="assets/images/games/perfect-kick-2/perfect-kick-2-card-mobile.webp" loading="lazy" decoding="async" width="600" height="338"></a><div class="update-body"><h3><a href="games/perfect-kick-2/#latest-update"><span class="nowrap">Perfect Kick 2</span></a></h3><p class="update-meta"><span class="update-store">App Store</span> <time datetime="2026-05-25">25 May 2026</time> <span class="update-version">version 2.0.64</span></p><p class="update-meta"><span class="update-store">Google Play</span> <time datetime="2026-05-05">5 May 2026</time></p></div><ul class="update-notes"><li>New Nutcracker set.</li><li>Fixes for crashes and other known issues.</li></ul></li>
+<li class="update-row"><a class="update-thumb" href="games/soccer-league/#latest-update" tabindex="-1" aria-hidden="true"><img alt="" src="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay-mobile.webp" loading="lazy" decoding="async" width="600" height="338"></a><div class="update-body"><h3><a href="games/soccer-league/#latest-update"><span class="nowrap">Soccer League</span></a></h3><p class="update-meta"><span class="update-store">Google Play</span> <time datetime="2026-05-05">5 May 2026</time></p></div><ul class="update-notes"><li>Game engine upgraded.</li></ul></li>
+</ol>
+</div>
+</section>
 </main>
 <!-- ===== GAMES PAGE ===== -->
 <main aria-label="Games catalogue" class="page" id="page-games">
@@ -359,7 +376,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp" srcset="assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp 1478w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp" srcset="assets/images/games/top-football-manager/top-football-manager-gamegou-card-mobile.webp 960w, assets/images/games/top-football-manager/top-football-manager-gamegou-card.webp 1478w" alt="Top Football Manager gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Licensed Jerseys</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -378,7 +394,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/super-goal/super-goal-gamegou-card.webp" srcset="assets/images/games/super-goal/super-goal-gamegou-card-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-card.webp 1766w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/super-goal/super-goal-gamegou-card.webp" srcset="assets/images/games/super-goal/super-goal-gamegou-card-mobile.webp 960w, assets/images/games/super-goal/super-goal-gamegou-card.webp 1766w" alt="Super Goal gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Most Downloaded</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -397,7 +412,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp" srcset="assets/images/games/soccer-legend/soccer-legend-gamegou-card-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp 1690w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp" srcset="assets/images/games/soccer-legend/soccer-legend-gamegou-card-mobile.webp 960w, assets/images/games/soccer-legend/soccer-legend-gamegou-card.webp 1690w" alt="Soccer Legend gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Puzzle Football</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -416,7 +430,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp" srcset="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp 1280w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp" srcset="assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay-mobile.webp 640w, assets/images/games/soccer-league/soccer-league-gamegou-long-range-shot-gameplay.webp 1280w" alt="Soccer League gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Real Time PvP</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -435,7 +448,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp" srcset="assets/images/games/perfect-kick/perfect-kick-gamegou-card-mobile.webp 540w, assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp 675w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp" srcset="assets/images/games/perfect-kick/perfect-kick-gamegou-card-mobile.webp 540w, assets/images/games/perfect-kick/perfect-kick-gamegou-card.webp 675w" alt="Perfect Kick gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Award Winner</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -454,7 +466,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/perfect-kick-2/perfect-kick-2-card.webp" srcset="assets/images/games/perfect-kick-2/perfect-kick-2-card-mobile.webp 540w, assets/images/games/perfect-kick-2/perfect-kick-2-card.webp 874w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/perfect-kick-2/perfect-kick-2-card.webp" srcset="assets/images/games/perfect-kick-2/perfect-kick-2-card-mobile.webp 540w, assets/images/games/perfect-kick-2/perfect-kick-2-card.webp 874w" alt="Perfect Kick 2 gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Fan Favourite</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -473,7 +484,6 @@
       <div class="img-fit game-card-img">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" class="img-fill" aria-hidden="true" alt="" src="assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp" srcset="assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp 540w, assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp 824w" loading="lazy">
         <img sizes="(max-width: 768px) 92vw, (max-width: 1120px) 46vw, 400px" src="assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp" srcset="assets/images/games/soccer-strike/soccer-strike-gamegou-card-mobile.webp 540w, assets/images/games/soccer-strike/soccer-strike-gamegou-card.webp 824w" alt="Soccer Strike gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">Multiplayer</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -613,16 +623,20 @@
 <li><a href="https://www.facebook.com/gamegou/" rel="noopener noreferrer" target="_blank">Facebook</a></li>
 </ul>
 </div>
+<div class="footer-col footer-lang">
+<h4>Language</h4>
+<ul role="list"><li><a href="./" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="es/" hreflang="es" lang="es">Español</a></li><li><a href="pt/" hreflang="pt" lang="pt">Português</a></li><li><a href="fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="tr/" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="ja/" hreflang="ja" lang="ja">日本語</a></li></ul>
+</div>
 </div>
 <div class="footer-bottom">
-<p>© 2026 Gamegou. All rights reserved.</p>
+<p>© 2026 Gamegou Limited. All rights reserved.</p>
 <div class="footer-legal">
 <a href="privacy-policy/">Privacy Policy</a>
 <a href="terms/">Terms of Service</a>
 </div>
 </div>
 </footer>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=7"></script>
 <script defer src="assets/js/analytics.js"></script>
 <script src="assets/js/fit-names.js"></script>
 </body>

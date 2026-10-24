@@ -475,6 +475,8 @@ let currentPage = 'home';
 let currentGameId = null;
 
 function navigate(page, gameId = null, updateHash = true) {
+  const section = page === 'updates' ? 'updates' : null;
+  if (section) page = 'home';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   currentPage = page;
@@ -498,15 +500,17 @@ function navigate(page, gameId = null, updateHash = true) {
   }
 
   setPageMeta(page, gameId);
-  if (updateHash) updateLocationHash(page, gameId);
+  if (updateHash) updateLocationHash(section || page, gameId);
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const target = section && document.getElementById(section);
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
   closeMobileNav();
   initAnimations();
 }
 
 function updateLocationHash(page, gameId = null) {
-  const nextHash = page === 'home' ? '' : page === 'game' && gameId ? `#game=${encodeURIComponent(gameId)}` : `#${encodeURIComponent(page)}`;
+  const nextHash = page === 'home' ? '' : page === 'updates' ? '#updates' : page === 'game' && gameId ? `#game=${encodeURIComponent(gameId)}` : `#${encodeURIComponent(page)}`;
   const currentHash = window.location.hash || '';
   if (currentHash === nextHash) return;
   const nextUrl = `${window.location.pathname}${window.location.search}${nextHash}`;
@@ -522,15 +526,23 @@ function routeFromHash() {
   if (hash.startsWith('game=')) {
     const gameId = hash.split('=')[1];
     if (GAMES.some(g => g.id === gameId)) {
-      navigate('game', gameId, false);
+      window.location.replace(gamePageHref(gameId));
       return;
     }
   }
-  const validPages = ['home', 'games', 'about', 'partners', 'contact', 'privacy', 'terms'];
+  const validPages = ['home', 'updates', 'games', 'about', 'partners', 'contact', 'privacy', 'terms'];
   navigate(validPages.includes(hash) ? hash : 'home', null, false);
 }
 
+const INITIAL_META = { title: document.title, desc: (document.querySelector('meta[name="description"]') || {}).content };
 function setPageMeta(page, gameId = null) {
+  const isEnglish = (document.documentElement.lang || 'en').toLowerCase().startsWith('en');
+  if (page === 'home' || !isEnglish) {
+    document.title = INITIAL_META.title;
+    const d = document.querySelector('meta[name="description"]');
+    if (d && INITIAL_META.desc) d.setAttribute('content', INITIAL_META.desc);
+    return;
+  }
   const description = document.querySelector('meta[name="description"]');
   const ogTitle = document.querySelector('meta[property="og:title"]');
   const ogDescription = document.querySelector('meta[property="og:description"]');
@@ -600,14 +612,13 @@ function renderHome() {
   const featuredIds = ['super-goal', 'soccer-strike', 'top-football-manager'];
   const featuredGames = featuredIds.map(id => GAMES.find(g => g.id === id)).filter(Boolean);
   const heroContainer = document.getElementById('hero-cards');
-  if (!heroContainer) return;
+  if (!heroContainer || heroContainer.children.length) return;
   heroContainer.innerHTML = `
     <div class="hero-showcase" aria-label="Featured games showcase">
       <a class="img-fit hero-feature hero-feature-large" href="${gamePageHref(featuredGames[0].id)}" data-id="${featuredGames[0].id}">
         <picture class="img-fill-pic"><source media="(min-width: 1121px)" srcset="${featuredGames[0].featureImage || featuredGames[0].heroImage}"><img class="img-fill" aria-hidden="true" alt="" src="${featuredGames[0].heroImage}"></picture>
         <picture class="img-main-pic"><source media="(min-width: 1121px)" srcset="${featuredGames[0].featureImage || featuredGames[0].heroImage}"><img src="${featuredGames[0].heroImage}"${srcsetAttr(featuredGames[0].heroImage, '(max-width: 768px) 92vw, 55vw')} alt="${featuredGames[0].name} gameplay artwork" loading="eager" width="1100" height="620"></picture>
         <div class="hero-feature-copy">
-          <span class="hero-feature-kicker">Featured</span>
           <h3>${keepNames(featuredGames[0].name)}</h3>
           <p>${featuredGames[0].tagline}</p>
         </div>
@@ -618,7 +629,6 @@ function renderHome() {
             <img class="img-fill" aria-hidden="true" alt="" src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} loading="lazy">
             <img src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
             <div class="hero-feature-copy">
-              <span class="hero-feature-kicker">${g.badge}</span>
               <h3>${keepNames(g.name)}</h3>
             </div>
           </a>
@@ -628,7 +638,7 @@ function renderHome() {
   `;
 
   const grid = document.getElementById('home-games-grid');
-  if (!grid) return;
+  if (!grid || grid.children.length) return;
   grid.innerHTML = GAMES.map((g, index) => gameCardHTML(g, index)).join('');
 }
 
@@ -745,7 +755,6 @@ function gameCardHTML(g, index = 0) {
       <div class="img-fit game-card-img">
         <img class="img-fill" aria-hidden="true" alt="" src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} loading="lazy">
         <img src="${g.heroImage}"${srcsetAttr(g.heroImage, '(max-width: 768px) 92vw, 400px')} alt="${g.name} gameplay artwork" loading="lazy" width="600" height="338">
-        <span class="game-card-badge">${g.badge}</span>
       </div>
       <div class="game-card-body">
         <div class="game-card-topline">
@@ -765,7 +774,7 @@ function gameCardHTML(g, index = 0) {
 // ===== RENDER GAMES PAGE =====
 function renderGamesPage() {
   const grid = document.getElementById('games-page-grid');
-  if (!grid) return;
+  if (!grid || grid.children.length) return;
   grid.innerHTML = GAMES.map((g, index) => gameCardHTML(g, index)).join('');
 }
 
