@@ -34,7 +34,6 @@ def card(g):
     items, source = FACTS[g]
     lis = "".join(f'<li><span class="v{" num" if v[0].isdigit() else ""}">{v}</span>' + (f'<span class="k">{k}</span>' if k else "") + "</li>" for v, k in items)
     return (f'<article class="game-seo-card game-glance-card">\n'
-            f'<div class="section-label">At a glance</div>\n'
             f'<h2 class="visually-hidden"><span class="nowrap">{NAMES[g]}</span> at a glance</h2>\n'
             f'<ul class="facts-line" role="list">{lis}</ul>\n'
             f'<p class="facts-note">{source}</p>\n'

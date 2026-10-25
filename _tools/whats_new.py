@@ -102,7 +102,6 @@ def section():
                     f'<div class="update-body"><p class="update-game"><a href="games/{g}/#latest-update">{nw(NAMES[g])}</a></p>'
                     f'<h3>{UPDATES[g]["headline"]}</h3>{meta(g)}{notes(g)}{get_links(g)}</div></li>')
     return ('<section aria-labelledby="updates-heading" class="section updates-section" id="updates">\n<div class="container">\n'
-            '<div class="section-label">Updates</div>\n'
             '<h2 class="section-title" id="updates-heading">What\'s <span>New</span></h2>\n'
             '<p class="section-desc">New levels, new events, new kit. Here\'s what just landed.</p>\n'
             + feat + '\n<ol class="updates-list" role="list">\n' + "\n".join(rows) + '\n</ol>\n</div>\n</section>\n')
