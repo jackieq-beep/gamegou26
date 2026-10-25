@@ -76,6 +76,7 @@
   addEventListener('resize', queue);
   addEventListener('load', queue);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
+  if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', queue);
   if (window.MutationObserver) {
     new MutationObserver(function (list) {
       for (var k = 0; k < list.length; k++) if (list[k].type === 'childList' && list[k].addedNodes.length) { queue(); return; }
