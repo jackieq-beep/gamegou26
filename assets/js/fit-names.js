@@ -56,9 +56,23 @@
       }
     }
   }
-  function queue() { if (!queued) { queued = true; requestAnimationFrame(fit); } }
+  // "At a glance" facts: keep the line on one row by shrinking it (down to 18px), otherwise let it wrap
+  function fitFacts() {
+    var lines = document.querySelectorAll('.facts-line');
+    for (var i = 0; i < lines.length; i++) {
+      var ul = lines[i];
+      ul.style.fontSize = '';
+      if (getComputedStyle(ul).display !== 'flex' || !ul.clientWidth) continue;
+      ul.style.flexWrap = 'nowrap';
+      var need = ul.scrollWidth, have = ul.clientWidth, fs = parseFloat(getComputedStyle(ul).fontSize);
+      ul.style.flexWrap = '';
+      if (need > have + 1) ul.style.fontSize = Math.max(18, fs * have / need * 0.98).toFixed(2) + 'px';
+    }
+  }
+  function queue() { if (!queued) { queued = true; requestAnimationFrame(function () { fit(); fitFacts(); }); } }
 
   fit();
+  fitFacts();
   addEventListener('resize', queue);
   addEventListener('load', queue);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
