@@ -3536,3 +3536,20 @@ html:lang(ja) .hero-content .hero-title, html:lang(zh-Hans) .hero-content .hero-
 .footer-lang-switch li a:hover { color: #ffffff; background: rgba(255,255,255,0.06); }
 .footer-lang-switch li a[aria-current="page"] { color: var(--amber); }
 @media (prefers-reduced-motion: reduce) { .footer-lang-switch summary .chev { transition: none; } }
+
+/* At a glance: store facts as one line of headline text (game pages) */
+.game-glance-card { display: flex; flex-direction: column; justify-content: center; }
+.game-seo-card .facts-line { list-style: none; margin: 0.75rem 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(1.5rem, 2.2vw, 2.1rem); line-height: 1.15; color: #ffffff; }
+.game-seo-card .facts-line li { padding: 0; color: #ffffff; font-size: inherit; line-height: inherit; white-space: nowrap; }
+.game-seo-card .facts-line li::before { display: none; }
+.game-seo-card .facts-line li:not(:last-child)::after { content: "/"; color: var(--amber); margin: 0 0.55em; font-weight: 600; }
+.facts-line .num { direction: ltr; unicode-bidi: isolate; }
+.facts-line .k { color: var(--text-secondary); font-weight: 600; margin-inline-start: 0.3em; }
+.facts-line small { color: var(--amber); font-size: 0.7em; }
+.game-seo-card .facts-note { margin: 1.75rem 0 0; font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+:lang(ar) .game-seo-card .facts-line, :lang(zh-Hans) .game-seo-card .facts-line, :lang(ja) .game-seo-card .facts-line { text-transform: none; }
+@media (max-width: 640px) {
+  .game-seo-card .facts-line { display: grid; grid-template-columns: 1fr; gap: 0.35rem; }
+  .game-seo-card .facts-line li { white-space: normal; }
+  .game-seo-card .facts-line li:not(:last-child)::after { display: none; }
+}
