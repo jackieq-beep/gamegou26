@@ -26,7 +26,7 @@ THUMB = {"top-football-manager": "top-football-manager-gamegou-card-mobile.webp"
          "perfect-kick": "perfect-kick-gamegou-card-mobile.webp", "perfect-kick-2": "perfect-kick-2-card-mobile.webp",
          "soccer-strike": "soccer-strike-gamegou-card-mobile.webp"}
 
-# Store release notes checked 2026-10-24. (store, ISO date, short date, version or None)
+# Store release notes checked 2026-10-24; Top Football Manager Mid-Season Sale added 2026-11-24. (store, ISO date, short date, version or None)
 UPDATES = {
     "soccer-legend": dict(headline="Halloween update: 50 new levels",
         notes=["New Harvest outfits for your star.", "Fixes and improvements."],
@@ -37,12 +37,10 @@ UPDATES = {
     "soccer-strike": dict(headline="Monthly Card and Level Packs",
         notes=["Smoother, more stable matches."],
         releases=[("apple", "2026-08-31", "31 Aug 2026", "1.3.16"), ("play", "2026-08-21", "21 Aug 2026", None)]),
-    "top-football-manager": dict(headline="Triple Crown season event",
-        notes=["New Emergency Signing and Emergency Reinforcement bundles.",
-               "Teamwork between players from the same country or region now works differently.",
-               "A cleaner interface.",
-               "Payment fix for the Emergency Reinforcement bundle on iPhone."],
-        releases=[("apple", "2026-08-28", "28 Aug 2026", "3.1.17"), ("play", "2026-08-04", "4 Aug 2026", None)]),
+    "top-football-manager": dict(headline="Mid-Season Sale",
+        notes=["The {{Top Football Manager}} Mid-Season Sale is here: limited-time bundles are discounted, and every purchase comes with an exclusive team badge.",
+               "Progress purchases are now available for Goal Rush and Clean Sheet Challenge, to unlock even more rewards."],
+        releases=[("play", "2026-11-24", "24 Nov 2026", None)]),
     "perfect-kick": dict(headline="Performance update",
         notes=["Bug fixes for smoother play."],
         releases=[("play", "2026-08-26", "26 Aug 2026", None)]),
@@ -53,9 +51,10 @@ UPDATES = {
         notes=["Upgraded game engine."],
         releases=[("play", "2026-05-05", "5 May 2026", None)]),
 }
-FEATURED = "soccer-legend"
-FEATURE_ART = ("assets/images/games/soccer-legend/soccer-legend-gamegou-power-shot-stadium-fireworks.webp",
-               "assets/images/games/soccer-legend/soccer-legend-gamegou-power-shot-stadium-fireworks-mobile.webp")
+FEATURED = "top-football-manager"
+FEATURE_ART = ("assets/images/games/top-football-manager/top-football-manager-gamegou-mid-season-sale-trophy-champagne.webp",
+               "assets/images/games/top-football-manager/top-football-manager-gamegou-mid-season-sale-trophy-champagne-mobile.webp",
+               1034, 570)
 ORDER = sorted(UPDATES, key=lambda g: max(r[1] for r in UPDATES[g]["releases"]), reverse=True)
 
 APPLE_D = "M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"
@@ -77,7 +76,7 @@ def meta(g):
     return '<ul class="update-meta" role="list">' + "".join(out) + "</ul>"
 
 def notes(g):
-    return '<ul class="update-notes">' + "".join(f"<li>{n}</li>" for n in UPDATES[g]["notes"]) + "</ul>"
+    return '<ul class="update-notes">' + "".join(f"<li>{re.sub(r'{{(.*?)}}', lambda m: nw(m.group(1)), n)}</li>" for n in UPDATES[g]["notes"]) + "</ul>"
 
 def get_links(g):
     play, apple = STORES[g]
@@ -90,7 +89,7 @@ def section():
     f = FEATURED
     feat = (f'<article class="update-feature">'
             f'<a class="update-feature-art" href="games/{f}/#latest-update" tabindex="-1" aria-hidden="true">'
-            f'<picture><source media="(max-width: 768px)" srcset="{FEATURE_ART[1]}"><img alt="" src="{FEATURE_ART[0]}" loading="lazy" decoding="async" width="810" height="1440"></picture></a>'
+            f'<picture><source media="(max-width: 768px)" srcset="{FEATURE_ART[1]}"><img alt="" src="{FEATURE_ART[0]}" loading="lazy" decoding="async" width="{FEATURE_ART[2]}" height="{FEATURE_ART[3]}"></picture></a>'
             f'<div class="update-feature-body"><p class="update-game"><a href="games/{f}/#latest-update">{nw(NAMES[f])}</a></p>'
             f'<h3>{UPDATES[f]["headline"]}</h3>{meta(f)}{notes(f)}{get_links(f)}</div></article>')
     rows = []
